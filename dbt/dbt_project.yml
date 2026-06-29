@@ -16,24 +16,24 @@ clean-targets:
   - "dbt_packages"
 
 vars:
-  db_name: "PRECISION"
+  env_name: ""
 
 on-run-start:
   - >
-    CREATE DATABASE IF NOT EXISTS {{ var('db_name') }}
+    CREATE DATABASE IF NOT EXISTS {{ get_db_name() }}
   - >
-    CREATE SCHEMA IF NOT EXISTS {{ var('db_name') }}.RAW
+    CREATE SCHEMA IF NOT EXISTS {{ get_db_name() }}.RAW
   - >
-    CREATE SCHEMA IF NOT EXISTS {{ var('db_name') }}.ODS
+    CREATE SCHEMA IF NOT EXISTS {{ get_db_name() }}.ODS
   - >
-    CREATE SCHEMA IF NOT EXISTS {{ var('db_name') }}.ANALYTICS
+    CREATE SCHEMA IF NOT EXISTS {{ get_db_name() }}.ANALYTICS
   - >
-    CREATE SCHEMA IF NOT EXISTS {{ var('db_name') }}.FINANCE_CURATED
+    CREATE SCHEMA IF NOT EXISTS {{ get_db_name() }}.FINANCE_CURATED
   - >
-    CREATE TABLE IF NOT EXISTS {{ var('db_name') }}.RAW.CPI_CONFIG
+    CREATE TABLE IF NOT EXISTS {{ get_db_name() }}.RAW.CPI_CONFIG
     (config_key VARCHAR, default_value VARCHAR, override_value VARCHAR, override_until_date DATE)
   - >
-    CREATE OR REPLACE FUNCTION {{ var('db_name') }}.RAW.GET_CPI_CONFIG(p_config_key VARCHAR)
+    CREATE OR REPLACE FUNCTION {{ get_db_name() }}.RAW.GET_CPI_CONFIG(p_config_key VARCHAR)
     RETURNS FLOAT
     LANGUAGE SQL
     AS
@@ -44,19 +44,19 @@ on-run-start:
             THEN override_value::FLOAT
           ELSE default_value::FLOAT
         END
-      FROM IDENTIFIER('{{ var("db_name") }}.RAW.CPI_CONFIG')
+      FROM IDENTIFIER('{{ get_db_name() }}.RAW.CPI_CONFIG')
       WHERE config_key = p_config_key
       LIMIT 1
     $$
 
 seeds:
   precision_cagr:
-    +database: "{{ var('db_name') }}"
+    +database: "{{ get_db_name() }}"
     +schema: RAW
 
 models:
   precision_cagr:
-    +database: "{{ var('db_name') }}"
+    +database: "{{ get_db_name() }}"
     staging:
       +schema: ODS
     marts:

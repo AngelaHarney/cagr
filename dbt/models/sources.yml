@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: raw
-    database: "{{ var('db_name') }}"
+    database: "{{ get_db_name() }}"
     schema: RAW
     tables:
       - name: properties

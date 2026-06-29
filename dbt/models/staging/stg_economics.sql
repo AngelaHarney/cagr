@@ -2,4 +2,4 @@
 -- Co-authored with CoCo
 
 SELECT
-    {{ var('db_name') }}.RAW.GET_CPI_CONFIG('cpi_cagr') AS cpi_cagr
+    {{ get_db_name() }}.RAW.GET_CPI_CONFIG('cpi_cagr') AS cpi_cagr
