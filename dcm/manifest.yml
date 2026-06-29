@@ -1,37 +1,29 @@
-definition_version: 2
+manifest_version: 2
+type: DCM_PROJECT
+default_target: 'DEV'
 
-project_definition:
-  name: precision_calcs
-  default_target: DEV
+targets:
+  DEV:
+    project_name: 'PRECISION.CAGR.PRECISION_CALCS'
+    templating_config: 'DEV'
+  TST:
+    project_name: 'PRECISION.CAGR.PRECISION_CALCS_TST'
+    templating_config: 'TST'
+  PRD:
+    project_name: 'PRECISION.CAGR.PRECISION_CALCS_PRD'
+    templating_config: 'PRD'
 
-  targets:
+templating:
+  defaults:
+    env_suffix: "_DEV"
+    wh_size: "XSMALL"
+  configurations:
     DEV:
-      project_identifier: PRECISION.CAGR.PRECISION_CALCS
-      templating:
-        defaults:
-          env_suffix: "_DEV"
-          wh_size: "XSMALL"
-        configurations:
-          DEV:
-            env_suffix: "_DEV"
-            wh_size: "XSMALL"
+      env_suffix: "_DEV"
+      wh_size: "XSMALL"
     TST:
-      project_identifier: PRECISION.CAGR.PRECISION_CALCS_TST
-      templating:
-        defaults:
-          env_suffix: "_TST"
-          wh_size: "SMALL"
-        configurations:
-          TST:
-            env_suffix: "_TST"
-            wh_size: "SMALL"
+      env_suffix: "_TST"
+      wh_size: "SMALL"
     PRD:
-      project_identifier: PRECISION.CAGR.PRECISION_CALCS_PRD
-      templating:
-        defaults:
-          env_suffix: ""
-          wh_size: "MEDIUM"
-        configurations:
-          PRD:
-            env_suffix: ""
-            wh_size: "MEDIUM"
+      env_suffix: ""
+      wh_size: "MEDIUM"
