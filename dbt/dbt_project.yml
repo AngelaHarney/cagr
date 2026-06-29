@@ -51,12 +51,12 @@ on-run-start:
 
 seeds:
   precision_cagr:
-    +database: "{{ get_db_name() }}"
+    +database: "{% if var('env_name', '') != '' %}PRECISION_{{ var('env_name') }}{% else %}PRECISION{% endif %}"
     +schema: RAW
 
 models:
   precision_cagr:
-    +database: "{{ get_db_name() }}"
+    +database: "{% if var('env_name', '') != '' %}PRECISION_{{ var('env_name') }}{% else %}PRECISION{% endif %}"
     staging:
       +schema: ODS
     marts:

@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: raw
-    database: "{{ get_db_name() }}"
+    database: "{% if var('env_name', '') != '' %}PRECISION_{{ var('env_name') }}{% else %}PRECISION{% endif %}"
     schema: RAW
     tables:
       - name: properties

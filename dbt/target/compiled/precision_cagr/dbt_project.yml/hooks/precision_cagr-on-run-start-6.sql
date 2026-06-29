@@ -5,7 +5,7 @@ CREATE OR REPLACE FUNCTION PRECISION.RAW.GET_CPI_CONFIG(p_config_key VARCHAR) RE
         THEN override_value::FLOAT
       ELSE default_value::FLOAT
     END
-  FROM PRECISION.RAW.CPI_CONFIG
+  FROM IDENTIFIER('PRECISION.RAW.CPI_CONFIG')
   WHERE config_key = p_config_key
   LIMIT 1
 $$
