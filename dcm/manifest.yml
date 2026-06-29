@@ -4,26 +4,30 @@ default_target: 'DEV'
 
 targets:
   DEV:
-    project_name: 'PRECISION.CAGR.PRECISION_CALCS'
+    project_name: 'PRECISION_DEV.CAGR.PRECISION_CALCS'
     templating_config: 'DEV'
   TST:
-    project_name: 'PRECISION.CAGR.PRECISION_CALCS_TST'
+    project_name: 'PRECISION_TST.CAGR.PRECISION_CALCS'
     templating_config: 'TST'
   PRD:
-    project_name: 'PRECISION.CAGR.PRECISION_CALCS_PRD'
+    project_name: 'PRECISION.CAGR.PRECISION_CALCS'
     templating_config: 'PRD'
 
 templating:
   defaults:
     env_suffix: "_DEV"
+    db_name: "PRECISION_DEV"
     wh_size: "XSMALL"
   configurations:
     DEV:
       env_suffix: "_DEV"
+      db_name: "PRECISION_DEV"
       wh_size: "XSMALL"
     TST:
       env_suffix: "_TST"
+      db_name: "PRECISION_TST"
       wh_size: "SMALL"
     PRD:
       env_suffix: ""
+      db_name: "PRECISION"
       wh_size: "MEDIUM"
