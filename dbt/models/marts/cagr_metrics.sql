@@ -14,7 +14,7 @@ fins AS (
 ),
 
 econ AS (
-    SELECT * FROM {{ ref('stg_economics') }}
+    SELECT cpi_cagr FROM {{ ref('stg_economics') }}
 )
 
 SELECT

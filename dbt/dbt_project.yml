@@ -15,6 +15,9 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+on-run-start:
+  - "{{ dbt.run_query(\"CREATE TABLE IF NOT EXISTS PRECISION.ANALYTICS_RAW.CPI_CONFIG (config_key VARCHAR, default_value VARCHAR, override_value VARCHAR, override_until_date DATE)\") }}"
+
 seeds:
   precision_cagr:
     schema: RAW

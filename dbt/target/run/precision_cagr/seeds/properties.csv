@@ -1,0 +1,14 @@
+
+    
+    
+    
+    create table PRECISION.ANALYTICS_RAW.properties (property_id text,property_name text,address text,property_type text,acquisition_date date,acquisition_price integer,current_value integer)
+  ;
+    -- dbt seed --
+    
+            insert into PRECISION.ANALYTICS_RAW.properties (property_id, property_name, address, property_type, acquisition_date, acquisition_price, current_value) values
+            (%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s)
+        
+
+;
+  
