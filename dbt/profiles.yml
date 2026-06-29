@@ -1,0 +1,12 @@
+precision_cagr:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: ''
+      user: ''
+      role: ACCOUNTADMIN
+      database: PRECISION
+      warehouse: COMPUTE_WH
+      schema: ANALYTICS
+      threads: 4
