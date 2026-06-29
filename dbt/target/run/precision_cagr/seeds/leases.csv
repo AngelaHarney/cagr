@@ -1,12 +1,10 @@
 
     
     
-    
-    create table PRECISION.ANALYTICS_RAW.leases (lease_id text,property_id text,tenant_name text,lease_start_date date,lease_end_date date,monthly_rent integer,annual_escalation_pct float8,projected_end_value integer)
-  ;
+    truncate table "PRECISION"."RAW"."LEASES";
     -- dbt seed --
     
-            insert into PRECISION.ANALYTICS_RAW.leases (lease_id, property_id, tenant_name, lease_start_date, lease_end_date, monthly_rent, annual_escalation_pct, projected_end_value) values
+            insert into PRECISION.RAW.leases (lease_id, property_id, tenant_name, lease_start_date, lease_end_date, monthly_rent, annual_escalation_pct, projected_end_value) values
             (%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s)
         
 

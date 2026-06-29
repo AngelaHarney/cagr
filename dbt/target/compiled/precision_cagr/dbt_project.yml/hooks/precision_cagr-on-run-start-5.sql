@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS PRECISION.RAW.CPI_CONFIG (config_key VARCHAR, default_value VARCHAR, override_value VARCHAR, override_until_date DATE)

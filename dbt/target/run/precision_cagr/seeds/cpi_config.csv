@@ -1,0 +1,12 @@
+
+    
+    
+    truncate table "PRECISION"."RAW"."CPI_CONFIG";
+    -- dbt seed --
+    
+            insert into PRECISION.RAW.cpi_config (config_key, default_value, override_value, override_until_date) values
+            (%s,%s,%s,%s)
+        
+
+;
+  

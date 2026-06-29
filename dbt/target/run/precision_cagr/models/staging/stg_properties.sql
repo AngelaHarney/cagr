@@ -1,5 +1,5 @@
 
-  create or replace   view PRECISION.ANALYTICS.stg_properties
+  create or replace   view PRECISION.ODS.stg_properties
   
    as (
     -- Staging model for properties seed data

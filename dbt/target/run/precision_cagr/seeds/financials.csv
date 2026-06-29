@@ -1,12 +1,10 @@
 
     
     
-    
-    create table PRECISION.ANALYTICS_RAW.financials (financial_id text,property_id text,period_date date,noi integer,capital_expenditures integer,distributions integer)
-  ;
+    truncate table "PRECISION"."RAW"."FINANCIALS";
     -- dbt seed --
     
-            insert into PRECISION.ANALYTICS_RAW.financials (financial_id, property_id, period_date, noi, capital_expenditures, distributions) values
+            insert into PRECISION.RAW.financials (financial_id, property_id, period_date, noi, capital_expenditures, distributions) values
             (%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s)
         
 

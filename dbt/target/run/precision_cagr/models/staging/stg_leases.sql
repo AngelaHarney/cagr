@@ -1,5 +1,5 @@
 
-  create or replace   view PRECISION.ANALYTICS.stg_leases
+  create or replace   view PRECISION.ODS.stg_leases
   
    as (
     -- Staging model for leases seed data

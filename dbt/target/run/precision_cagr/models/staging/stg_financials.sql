@@ -1,5 +1,5 @@
 
-  create or replace   view PRECISION.ANALYTICS.stg_financials
+  create or replace   view PRECISION.ODS.stg_financials
   
    as (
     -- Staging model for financials seed data with aggregations per property

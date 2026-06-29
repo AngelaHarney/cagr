@@ -444,3 +444,1881 @@ Object 'PRECISION.RAW.PROPERTIES' does not exist or not authorized.
 [0m20:34:12.103595 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 3.33326, "process_in_blocks": "0", "process_kernel_time": 0.78, "process_mem_max_rss": "455280", "process_out_blocks": "0", "process_user_time": 4.46}
 [0m20:34:12.104200 [debug] [Dummy-1   ]: Command `cli run` failed at 20:34:12.103948 after 3.33 seconds
 [0m20:34:12.104745 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 21:12:46.838150 | da4698c2-76e3-463e-b443-716712fc8ef3 ==============================
+[0m21:12:46.838150 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m21:12:46.838980 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'log_format': 'default', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m21:12:47.112865 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m21:12:47.674686 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m21:12:47.814373 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m21:12:49.683356 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:12:49.685341 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:12:49.725246 [info ] [Dummy-1   ]: Found 5 models, 1 test, 4 seeds, 1 operation, 3 sources, 474 macros
+[0m21:12:49.727184 [info ] [Dummy-1   ]: 
+[0m21:12:49.727724 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m21:12:49.728224 [info ] [Dummy-1   ]: 
+[0m21:12:49.728966 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m21:12:49.730571 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION'
+[0m21:12:49.809656 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION"
+[0m21:12:49.810222 [debug] [ThreadPool]: On list_PRECISION: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION"} */
+show terse schemas in database PRECISION
+    limit 10000
+[0m21:12:49.810681 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:12:50.335999 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.525 seconds
+[0m21:12:50.343413 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_PRECISION, now list_PRECISION_ANALYTICS)
+[0m21:12:50.344543 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION_ANALYTICS_RAW'
+[0m21:12:50.357165 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS"
+[0m21:12:50.360629 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_RAW"
+[0m21:12:50.361167 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:12:50.361672 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_RAW"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:12:50.362133 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:12:50.362575 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:12:50.803407 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.441 seconds
+[0m21:12:50.807877 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_RAW"
+[0m21:12:50.808470 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_RAW"} */
+show objects in PRECISION.ANALYTICS_RAW
+    limit 10000
+    
+;
+[0m21:12:50.828642 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.466 seconds
+[0m21:12:50.830373 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS"
+[0m21:12:50.830884 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS"} */
+show objects in PRECISION.ANALYTICS
+    limit 10000
+    
+;
+[0m21:12:50.933982 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.103 seconds
+[0m21:12:50.936258 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS"
+[0m21:12:50.936825 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:12:50.938180 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.129 seconds
+[0m21:12:50.940023 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_RAW"
+[0m21:12:50.940488 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_RAW"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:12:51.024848 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.084 seconds
+[0m21:12:51.027946 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.091 seconds
+[0m21:12:51.036748 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-0"
+[0m21:12:51.042280 [info ] [Dummy-1   ]: 1 of 1 START hook: precision_cagr.on-run-start.0 ............................... [RUN]
+[0m21:12:51.043232 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:12:51.043755 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FUNCTION PRECISION.ANALYTICS_RAW.GET_CPI_CONFIG(p_config_key VARCHAR) RETURNS FLOAT LANGUAGE SQL AS $$
+  SELECT
+    CASE
+      WHEN override_value IS NOT NULL AND override_until_date >= CURRENT_DATE()
+        THEN override_value::FLOAT
+      ELSE default_value::FLOAT
+    END
+  FROM PRECISION.ANALYTICS_RAW.CPI_CONFIG
+  WHERE config_key = p_config_key
+  LIMIT 1
+$$
+[0m21:12:51.044239 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m21:12:51.460621 [debug] [Dummy-1   ]: Snowflake adapter: Snowflake query id: 01c55d9c-0309-9151-0029-6af3003b3d8e
+[0m21:12:51.461237 [debug] [Dummy-1   ]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'PRECISION.ANALYTICS_RAW.CPI_CONFIG' does not exist or not authorized.
+[0m21:12:51.461969 [info ] [Dummy-1   ]: 1 of 1 ERROR hook: precision_cagr.on-run-start.0 ............................... [[31mERROR[0m in 0.43s]
+[0m21:12:51.462496 [info ] [Dummy-1   ]: 
+[0m21:12:51.467107 [debug] [Thread-2 (]: Began running node seed.precision_cagr.cpi_config
+[0m21:12:51.467896 [info ] [Thread-2 (]: 1 of 1 START seed file ANALYTICS_RAW.cpi_config ................................ [RUN]
+[0m21:12:51.468627 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_PRECISION_ANALYTICS, now seed.precision_cagr.cpi_config)
+[0m21:12:51.469155 [debug] [Thread-2 (]: Began compiling node seed.precision_cagr.cpi_config
+[0m21:12:51.469681 [debug] [Thread-2 (]: Began executing node seed.precision_cagr.cpi_config
+[0m21:12:51.504463 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:12:51.505050 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+create table PRECISION.ANALYTICS_RAW.cpi_config (config_key text,default_value float8,override_value float8,override_until_date date)
+[0m21:12:51.505585 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:12:52.188535 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.683 seconds
+[0m21:12:52.203464 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:12:52.204073 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+BEGIN
+[0m21:12:52.286221 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.082 seconds
+[0m21:12:52.287081 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:12:52.287587 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+insert into PRECISION.ANALYTICS_RAW.cpi_config (config_key, default_value, override_value, override_until_date) values
+            (%s,%s,%s,%s)...
+[0m21:12:52.752615 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.464 seconds
+[0m21:12:52.753381 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:12:52.753911 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+COMMIT
+[0m21:12:53.074819 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.320 seconds
+[0m21:12:53.080921 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.precision_cagr.cpi_config"
+[0m21:12:53.107125 [info ] [Thread-2 (]: 1 of 1 OK loaded seed file ANALYTICS_RAW.cpi_config ............................ [[32mINSERT 1[0m in 1.64s]
+[0m21:12:53.107887 [debug] [Thread-2 (]: Finished running node seed.precision_cagr.cpi_config
+[0m21:12:53.110463 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m21:12:53.110923 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.cpi_config' was properly closed.
+[0m21:12:53.111333 [debug] [Dummy-1   ]: Connection 'list_PRECISION_ANALYTICS_RAW' was properly closed.
+[0m21:12:53.111842 [info ] [Dummy-1   ]: 
+[0m21:12:53.112369 [info ] [Dummy-1   ]: Finished running 1 project hook, 1 seed in 0 hours 0 minutes and 3.38 seconds (3.38s).
+[0m21:12:53.113305 [debug] [Dummy-1   ]: Command end result
+[0m21:12:53.137117 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:12:53.138976 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:12:53.144479 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m21:12:53.144952 [info ] [Dummy-1   ]: 
+[0m21:12:53.145577 [info ] [Dummy-1   ]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m21:12:53.146058 [info ] [Dummy-1   ]: 
+[0m21:12:53.146659 [error] [Dummy-1   ]:   precision_cagr.on-run-start.0 failed, error:
+ 002003 (42S02): SQL compilation error:
+Object 'PRECISION.ANALYTICS_RAW.CPI_CONFIG' does not exist or not authorized.
+[0m21:12:53.147106 [info ] [Dummy-1   ]: 
+[0m21:12:53.147588 [info ] [Dummy-1   ]: Done. PASS=1 WARN=0 ERROR=1 SKIP=0 TOTAL=2
+[0m21:12:53.149240 [debug] [Dummy-1   ]: Resource report: {"command_name": "seed", "command_success": false, "command_wall_clock_time": 6.383532, "process_in_blocks": "0", "process_kernel_time": 0.71, "process_mem_max_rss": "509440", "process_out_blocks": "0", "process_user_time": 5.7}
+[0m21:12:53.149855 [debug] [Dummy-1   ]: Command `cli seed` failed at 21:12:53.149606 after 6.38 seconds
+[0m21:12:53.150373 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 21:14:37.715247 | e27cb7f8-22f5-4d10-9102-49b477c854f5 ==============================
+[0m21:14:37.715247 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m21:14:37.716127 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m21:14:37.996309 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m21:14:38.546746 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m21:14:38.704931 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m21:14:40.630741 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:14:40.632937 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:14:40.674997 [info ] [Dummy-1   ]: Found 5 models, 1 test, 4 seeds, 2 operations, 3 sources, 474 macros
+[0m21:14:40.676998 [info ] [Dummy-1   ]: 
+[0m21:14:40.677517 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m21:14:40.677944 [info ] [Dummy-1   ]: 
+[0m21:14:40.678722 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m21:14:40.680275 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION'
+[0m21:14:40.762153 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION"
+[0m21:14:40.762748 [debug] [ThreadPool]: On list_PRECISION: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION"} */
+show terse schemas in database PRECISION
+    limit 10000
+[0m21:14:40.763214 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:14:41.283171 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.520 seconds
+[0m21:14:41.291012 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_PRECISION, now list_PRECISION_ANALYTICS)
+[0m21:14:41.292316 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION_ANALYTICS_RAW'
+[0m21:14:41.305478 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS"
+[0m21:14:41.309355 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_RAW"
+[0m21:14:41.309946 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:14:41.310429 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_RAW"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:14:41.310883 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:14:41.311306 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:14:41.667765 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.356 seconds
+[0m21:14:41.672562 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_RAW"
+[0m21:14:41.673316 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.362 seconds
+[0m21:14:41.673864 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_RAW"} */
+show objects in PRECISION.ANALYTICS_RAW
+    limit 10000
+    
+;
+[0m21:14:41.675745 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS"
+[0m21:14:41.676571 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS"} */
+show objects in PRECISION.ANALYTICS
+    limit 10000
+    
+;
+[0m21:14:41.784643 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.107 seconds
+[0m21:14:41.788260 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS"
+[0m21:14:41.788797 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:14:41.806441 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.130 seconds
+[0m21:14:41.808726 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_RAW"
+[0m21:14:41.809290 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_RAW"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:14:41.850943 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.062 seconds
+[0m21:14:41.911815 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.102 seconds
+[0m21:14:41.922976 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-0"
+[0m21:14:41.928722 [info ] [Dummy-1   ]: 1 of 2 START hook: precision_cagr.on-run-start.0 ............................... [RUN]
+[0m21:14:41.929636 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:14:41.930144 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS PRECISION.ANALYTICS_RAW.CPI_CONFIG (config_key VARCHAR, default_value VARCHAR, override_value VARCHAR, override_until_date DATE)
+[0m21:14:41.930650 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m21:14:42.414894 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.484 seconds
+[0m21:14:42.416303 [info ] [Dummy-1   ]: 1 of 2 OK hook: precision_cagr.on-run-start.0 .................................. [[32mOK[0m in 0.50s]
+[0m21:14:42.419912 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-1"
+[0m21:14:42.420819 [info ] [Dummy-1   ]: 2 of 2 START hook: precision_cagr.on-run-start.1 ............................... [RUN]
+[0m21:14:42.421691 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:14:42.422210 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FUNCTION PRECISION.ANALYTICS_RAW.GET_CPI_CONFIG(p_config_key VARCHAR) RETURNS FLOAT LANGUAGE SQL AS $$
+  SELECT
+    CASE
+      WHEN override_value IS NOT NULL AND override_until_date >= CURRENT_DATE()
+        THEN override_value::FLOAT
+      ELSE default_value::FLOAT
+    END
+  FROM PRECISION.ANALYTICS_RAW.CPI_CONFIG
+  WHERE config_key = p_config_key
+  LIMIT 1
+$$
+[0m21:14:42.553865 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.131 seconds
+[0m21:14:42.555231 [info ] [Dummy-1   ]: 2 of 2 OK hook: precision_cagr.on-run-start.1 .................................. [[32mOK[0m in 0.14s]
+[0m21:14:42.555771 [info ] [Dummy-1   ]: 
+[0m21:14:42.560594 [debug] [Thread-2 (]: Began running node seed.precision_cagr.cpi_config
+[0m21:14:42.561353 [info ] [Thread-2 (]: 1 of 1 START seed file ANALYTICS_RAW.cpi_config ................................ [RUN]
+[0m21:14:42.562045 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_PRECISION_ANALYTICS, now seed.precision_cagr.cpi_config)
+[0m21:14:42.562539 [debug] [Thread-2 (]: Began compiling node seed.precision_cagr.cpi_config
+[0m21:14:42.563023 [debug] [Thread-2 (]: Began executing node seed.precision_cagr.cpi_config
+[0m21:14:42.607146 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:14:42.607868 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+BEGIN
+[0m21:14:42.608573 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:14:43.093712 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.485 seconds
+[0m21:14:43.094540 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:14:43.095205 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+truncate table "PRECISION"."ANALYTICS_RAW"."CPI_CONFIG"
+  ;
+[0m21:14:43.339392 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.243 seconds
+[0m21:14:43.340298 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:14:43.340935 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+COMMIT
+[0m21:14:43.602793 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.261 seconds
+[0m21:14:43.618426 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:14:43.619065 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+BEGIN
+[0m21:14:43.731123 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.111 seconds
+[0m21:14:43.732111 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:14:43.732644 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+insert into PRECISION.ANALYTICS_RAW.cpi_config (config_key, default_value, override_value, override_until_date) values
+            (%s,%s,%s,%s)...
+[0m21:14:44.138553 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.405 seconds
+[0m21:14:44.139333 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:14:44.139875 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+COMMIT
+[0m21:14:44.464510 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.324 seconds
+[0m21:14:44.470813 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.precision_cagr.cpi_config"
+[0m21:14:44.494796 [info ] [Thread-2 (]: 1 of 1 OK loaded seed file ANALYTICS_RAW.cpi_config ............................ [[32mINSERT 1[0m in 1.93s]
+[0m21:14:44.495598 [debug] [Thread-2 (]: Finished running node seed.precision_cagr.cpi_config
+[0m21:14:44.498225 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m21:14:44.498718 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.cpi_config' was properly closed.
+[0m21:14:44.499148 [debug] [Dummy-1   ]: Connection 'list_PRECISION_ANALYTICS_RAW' was properly closed.
+[0m21:14:44.499653 [info ] [Dummy-1   ]: 
+[0m21:14:44.500131 [info ] [Dummy-1   ]: Finished running 2 project hooks, 1 seed in 0 hours 0 minutes and 3.82 seconds (3.82s).
+[0m21:14:44.501152 [debug] [Dummy-1   ]: Command end result
+[0m21:14:44.523988 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:14:44.525937 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:14:44.531780 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m21:14:44.532250 [info ] [Dummy-1   ]: 
+[0m21:14:44.532822 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m21:14:44.533273 [info ] [Dummy-1   ]: 
+[0m21:14:44.533751 [info ] [Dummy-1   ]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m21:14:44.535407 [debug] [Dummy-1   ]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 6.8943706, "process_in_blocks": "0", "process_kernel_time": 0.77, "process_mem_max_rss": "507716", "process_out_blocks": "0", "process_user_time": 5.87}
+[0m21:14:44.536103 [debug] [Dummy-1   ]: Command `cli seed` succeeded at 21:14:44.535792 after 6.90 seconds
+[0m21:14:44.536618 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 21:15:18.449808 | 6edb5a38-520b-40e5-bdec-fcf9d2ef6ea4 ==============================
+[0m21:15:18.449808 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m21:15:18.450648 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt ', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': '/tmp/dbt/target/', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m21:15:18.724137 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m21:15:19.259137 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m21:15:19.475477 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:15:19.476072 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:15:19.702059 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:15:19.703999 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:15:19.743280 [info ] [Dummy-1   ]: Found 5 models, 1 test, 4 seeds, 2 operations, 3 sources, 474 macros
+[0m21:15:19.745456 [info ] [Dummy-1   ]: 
+[0m21:15:19.745966 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m21:15:19.746378 [info ] [Dummy-1   ]: 
+[0m21:15:19.747094 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m21:15:19.752458 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION'
+[0m21:15:19.853279 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION"
+[0m21:15:19.853826 [debug] [ThreadPool]: On list_PRECISION: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION"} */
+show terse schemas in database PRECISION
+    limit 10000
+[0m21:15:19.854250 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:15:20.267709 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.413 seconds
+[0m21:15:20.271453 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_PRECISION, now list_PRECISION_ANALYTICS)
+[0m21:15:20.272497 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION_ANALYTICS_RAW'
+[0m21:15:20.285174 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS"
+[0m21:15:20.288730 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_RAW"
+[0m21:15:20.289232 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:15:20.289707 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_RAW"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:15:20.290175 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:15:20.290611 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:15:20.732111 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.441 seconds
+[0m21:15:20.736566 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_RAW"
+[0m21:15:20.737238 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.447 seconds
+[0m21:15:20.737749 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_RAW"} */
+show objects in PRECISION.ANALYTICS_RAW
+    limit 10000
+    
+;
+[0m21:15:20.739485 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS"
+[0m21:15:20.740305 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS"} */
+show objects in PRECISION.ANALYTICS
+    limit 10000
+    
+;
+[0m21:15:20.837609 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.097 seconds
+[0m21:15:20.839461 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS"
+[0m21:15:20.839951 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:15:20.854071 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.114 seconds
+[0m21:15:20.855982 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_RAW"
+[0m21:15:20.856440 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_RAW"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:15:20.904875 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.064 seconds
+[0m21:15:20.926548 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.070 seconds
+[0m21:15:20.937149 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-0"
+[0m21:15:20.942915 [info ] [Dummy-1   ]: 1 of 2 START hook: precision_cagr.on-run-start.0 ............................... [RUN]
+[0m21:15:20.943830 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:15:20.944372 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS PRECISION.ANALYTICS_RAW.CPI_CONFIG (config_key VARCHAR, default_value VARCHAR, override_value VARCHAR, override_until_date DATE)
+[0m21:15:20.944892 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m21:15:21.417597 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.473 seconds
+[0m21:15:21.419021 [info ] [Dummy-1   ]: 1 of 2 OK hook: precision_cagr.on-run-start.0 .................................. [[32mOK[0m in 0.49s]
+[0m21:15:21.422484 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-1"
+[0m21:15:21.423426 [info ] [Dummy-1   ]: 2 of 2 START hook: precision_cagr.on-run-start.1 ............................... [RUN]
+[0m21:15:21.424340 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:15:21.424854 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FUNCTION PRECISION.ANALYTICS_RAW.GET_CPI_CONFIG(p_config_key VARCHAR) RETURNS FLOAT LANGUAGE SQL AS $$
+  SELECT
+    CASE
+      WHEN override_value IS NOT NULL AND override_until_date >= CURRENT_DATE()
+        THEN override_value::FLOAT
+      ELSE default_value::FLOAT
+    END
+  FROM PRECISION.ANALYTICS_RAW.CPI_CONFIG
+  WHERE config_key = p_config_key
+  LIMIT 1
+$$
+[0m21:15:21.571633 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.146 seconds
+[0m21:15:21.572879 [info ] [Dummy-1   ]: 2 of 2 OK hook: precision_cagr.on-run-start.1 .................................. [[32mOK[0m in 0.15s]
+[0m21:15:21.573378 [info ] [Dummy-1   ]: 
+[0m21:15:21.577816 [debug] [Thread-2 (]: Began running node model.precision_cagr.stg_economics
+[0m21:15:21.578650 [debug] [Thread-3 (]: Began running node model.precision_cagr.stg_financials
+[0m21:15:21.579249 [debug] [Thread-4 (]: Began running node model.precision_cagr.stg_leases
+[0m21:15:21.579837 [debug] [Thread-5 (]: Began running node model.precision_cagr.stg_properties
+[0m21:15:21.580504 [info ] [Thread-2 (]: 1 of 5 START sql view model ANALYTICS.stg_economics ............................ [RUN]
+[0m21:15:21.581157 [info ] [Thread-3 (]: 2 of 5 START sql view model ANALYTICS.stg_financials ........................... [RUN]
+[0m21:15:21.581787 [info ] [Thread-4 (]: 3 of 5 START sql view model ANALYTICS.stg_leases ............................... [RUN]
+[0m21:15:21.582439 [info ] [Thread-5 (]: 4 of 5 START sql view model ANALYTICS.stg_properties ........................... [RUN]
+[0m21:15:21.583121 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_PRECISION_ANALYTICS, now model.precision_cagr.stg_economics)
+[0m21:15:21.583700 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_PRECISION_ANALYTICS_RAW, now model.precision_cagr.stg_financials)
+[0m21:15:21.584349 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.precision_cagr.stg_leases'
+[0m21:15:21.584991 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.precision_cagr.stg_properties'
+[0m21:15:21.585518 [debug] [Thread-2 (]: Began compiling node model.precision_cagr.stg_economics
+[0m21:15:21.586027 [debug] [Thread-3 (]: Began compiling node model.precision_cagr.stg_financials
+[0m21:15:21.586527 [debug] [Thread-4 (]: Began compiling node model.precision_cagr.stg_leases
+[0m21:15:21.587009 [debug] [Thread-5 (]: Began compiling node model.precision_cagr.stg_properties
+[0m21:15:21.590407 [debug] [Thread-2 (]: Writing injected SQL for node "model.precision_cagr.stg_economics"
+[0m21:15:21.594516 [debug] [Thread-3 (]: Writing injected SQL for node "model.precision_cagr.stg_financials"
+[0m21:15:21.598609 [debug] [Thread-4 (]: Writing injected SQL for node "model.precision_cagr.stg_leases"
+[0m21:15:21.603954 [debug] [Thread-5 (]: Writing injected SQL for node "model.precision_cagr.stg_properties"
+[0m21:15:21.604801 [debug] [Thread-2 (]: Began executing node model.precision_cagr.stg_economics
+[0m21:15:21.605519 [debug] [Thread-3 (]: Began executing node model.precision_cagr.stg_financials
+[0m21:15:21.606352 [debug] [Thread-4 (]: Began executing node model.precision_cagr.stg_leases
+[0m21:15:21.623839 [debug] [Thread-5 (]: Began executing node model.precision_cagr.stg_properties
+[0m21:15:21.650016 [debug] [Thread-2 (]: Writing runtime sql for node "model.precision_cagr.stg_economics"
+[0m21:15:21.662389 [debug] [Thread-3 (]: Writing runtime sql for node "model.precision_cagr.stg_financials"
+[0m21:15:21.666158 [debug] [Thread-4 (]: Writing runtime sql for node "model.precision_cagr.stg_leases"
+[0m21:15:21.670991 [debug] [Thread-5 (]: Writing runtime sql for node "model.precision_cagr.stg_properties"
+[0m21:15:21.672335 [debug] [Thread-2 (]: Using snowflake connection "model.precision_cagr.stg_economics"
+[0m21:15:21.673784 [debug] [Thread-3 (]: Using snowflake connection "model.precision_cagr.stg_financials"
+[0m21:15:21.675160 [debug] [Thread-4 (]: Using snowflake connection "model.precision_cagr.stg_leases"
+[0m21:15:21.675784 [debug] [Thread-2 (]: On model.precision_cagr.stg_economics: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "model.precision_cagr.stg_economics"} */
+create or replace   view PRECISION.ANALYTICS.stg_economics
+  
+   as (
+    -- Staging model for CPI CAGR using GET_CPI_CONFIG UDF
+-- Co-authored with CoCo
+
+SELECT
+    PRECISION.ANALYTICS_RAW.GET_CPI_CONFIG('cpi_cagr') AS cpi_cagr
+  );
+[0m21:15:21.676885 [debug] [Thread-5 (]: Using snowflake connection "model.precision_cagr.stg_properties"
+[0m21:15:21.677425 [debug] [Thread-3 (]: On model.precision_cagr.stg_financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "model.precision_cagr.stg_financials"} */
+create or replace   view PRECISION.ANALYTICS.stg_financials
+  
+   as (
+    -- Staging model for financials seed data with aggregations per property
+-- Co-authored with CoCo
+
+SELECT
+    property_id,
+    MIN(period_date::DATE) AS first_period,
+    MAX(period_date::DATE) AS last_period,
+    SUM(noi) AS total_noi,
+    SUM(capital_expenditures) AS total_capex,
+    SUM(distributions) AS total_distributions,
+    MIN(noi) AS first_noi,
+    MAX(noi) AS latest_noi,
+    DATEDIFF('day', MIN(period_date::DATE), MAX(period_date::DATE)) / 365.25 AS financial_years_span
+FROM PRECISION.ANALYTICS_RAW.financials
+GROUP BY property_id
+  );
+[0m21:15:21.677969 [debug] [Thread-4 (]: On model.precision_cagr.stg_leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "model.precision_cagr.stg_leases"} */
+create or replace   view PRECISION.ANALYTICS.stg_leases
+  
+   as (
+    -- Staging model for leases seed data
+-- Co-authored with CoCo
+
+SELECT
+    lease_id,
+    property_id,
+    tenant_name,
+    lease_start_date::DATE AS lease_start_date,
+    lease_end_date::DATE AS lease_end_date,
+    monthly_rent,
+    annual_escalation_pct,
+    projected_end_value,
+    DATEDIFF('day', lease_start_date::DATE, lease_end_date::DATE) / 365.25 AS total_lease_years,
+    DATEDIFF('day', CURRENT_DATE(), lease_end_date::DATE) / 365.25 AS years_remaining
+FROM PRECISION.ANALYTICS_RAW.leases
+  );
+[0m21:15:21.678547 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:15:21.679085 [debug] [Thread-5 (]: On model.precision_cagr.stg_properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "model.precision_cagr.stg_properties"} */
+create or replace   view PRECISION.ANALYTICS.stg_properties
+  
+   as (
+    -- Staging model for properties seed data
+-- Co-authored with CoCo
+
+SELECT
+    property_id,
+    property_name,
+    address,
+    property_type,
+    acquisition_date::DATE AS acquisition_date,
+    acquisition_price,
+    current_value,
+    DATEDIFF('day', acquisition_date::DATE, CURRENT_DATE()) / 365.25 AS years_elapsed
+FROM PRECISION.ANALYTICS_RAW.properties
+  );
+[0m21:15:21.679586 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m21:15:21.680106 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m21:15:21.680847 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m21:15:22.362333 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.684 seconds
+[0m21:15:22.383212 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.703 seconds
+[0m21:15:22.389022 [info ] [Thread-2 (]: 1 of 5 OK created sql view model ANALYTICS.stg_economics ....................... [[32mSUCCESS 1[0m in 0.80s]
+[0m21:15:22.389813 [info ] [Thread-4 (]: 3 of 5 OK created sql view model ANALYTICS.stg_leases .......................... [[32mSUCCESS 1[0m in 0.80s]
+[0m21:15:22.390697 [debug] [Thread-2 (]: Finished running node model.precision_cagr.stg_economics
+[0m21:15:22.391498 [debug] [Thread-4 (]: Finished running node model.precision_cagr.stg_leases
+[0m21:15:22.395864 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.716 seconds
+[0m21:15:22.398374 [info ] [Thread-3 (]: 2 of 5 OK created sql view model ANALYTICS.stg_financials ...................... [[32mSUCCESS 1[0m in 0.81s]
+[0m21:15:22.399077 [debug] [Thread-3 (]: Finished running node model.precision_cagr.stg_financials
+[0m21:15:22.451628 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.771 seconds
+[0m21:15:22.454175 [info ] [Thread-5 (]: 4 of 5 OK created sql view model ANALYTICS.stg_properties ...................... [[32mSUCCESS 1[0m in 0.87s]
+[0m21:15:22.454892 [debug] [Thread-5 (]: Finished running node model.precision_cagr.stg_properties
+[0m21:15:22.456117 [debug] [Thread-2 (]: Began running node model.precision_cagr.cagr_metrics
+[0m21:15:22.456896 [info ] [Thread-2 (]: 5 of 5 START sql view model ANALYTICS.cagr_metrics ............................. [RUN]
+[0m21:15:22.457485 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.precision_cagr.stg_economics, now model.precision_cagr.cagr_metrics)
+[0m21:15:22.457941 [debug] [Thread-2 (]: Began compiling node model.precision_cagr.cagr_metrics
+[0m21:15:22.463097 [debug] [Thread-2 (]: Writing injected SQL for node "model.precision_cagr.cagr_metrics"
+[0m21:15:22.463803 [debug] [Thread-2 (]: Began executing node model.precision_cagr.cagr_metrics
+[0m21:15:22.467755 [debug] [Thread-2 (]: Writing runtime sql for node "model.precision_cagr.cagr_metrics"
+[0m21:15:22.470988 [debug] [Thread-2 (]: Using snowflake connection "model.precision_cagr.cagr_metrics"
+[0m21:15:22.471674 [debug] [Thread-2 (]: On model.precision_cagr.cagr_metrics: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "model.precision_cagr.cagr_metrics"} */
+create or replace   view PRECISION.ANALYTICS.cagr_metrics
+  
+   as (
+    -- CAGR metrics mart combining properties, leases, and financials
+-- Co-authored with CoCo
+
+WITH props AS (
+    SELECT * FROM PRECISION.ANALYTICS.stg_properties
+),
+
+leases AS (
+    SELECT * FROM PRECISION.ANALYTICS.stg_leases
+),
+
+fins AS (
+    SELECT * FROM PRECISION.ANALYTICS.stg_financials
+),
+
+econ AS (
+    SELECT cpi_cagr FROM PRECISION.ANALYTICS.stg_economics
+)
+
+SELECT
+    p.property_id,
+    p.property_name,
+    p.property_type,
+    p.acquisition_date,
+    p.acquisition_price,
+    p.current_value,
+    l.lease_start_date,
+    l.lease_end_date,
+    l.projected_end_value,
+    l.tenant_name,
+
+    -- Years calculations
+    p.years_elapsed,
+    l.years_remaining,
+    l.total_lease_years,
+
+    -- METRIC 1: Current CAGR (acquisition to today)
+    CASE WHEN p.years_elapsed > 0
+        THEN POWER(p.current_value / NULLIF(p.acquisition_price, 0), 1.0 / p.years_elapsed) - 1
+        ELSE NULL
+    END AS current_cagr,
+
+    -- METRIC 2: Remaining Lease CAGR (today to lease end)
+    CASE WHEN l.years_remaining > 0
+        THEN POWER(l.projected_end_value / NULLIF(p.current_value, 0), 1.0 / l.years_remaining) - 1
+        ELSE NULL
+    END AS remaining_lease_cagr,
+
+    -- METRIC 3: Full Lifetime CAGR (acquisition to lease end)
+    CASE WHEN l.total_lease_years > 0
+        THEN POWER(l.projected_end_value / NULLIF(p.acquisition_price, 0), 1.0 / l.total_lease_years) - 1
+        ELSE NULL
+    END AS full_lifetime_cagr,
+
+    -- METRIC 4: Total Return CAGR (includes distributions and capex)
+    CASE WHEN p.years_elapsed > 0
+        THEN POWER(
+            (p.current_value + COALESCE(f.total_distributions, 0) - COALESCE(f.total_capex, 0))
+            / NULLIF(p.acquisition_price, 0),
+            1.0 / p.years_elapsed
+        ) - 1
+        ELSE NULL
+    END AS total_return_cagr,
+
+    -- METRIC 5: NOI Growth CAGR
+    CASE WHEN f.financial_years_span > 0 AND f.first_noi > 0
+        THEN POWER(f.latest_noi / f.first_noi, 1.0 / f.financial_years_span) - 1
+        ELSE NULL
+    END AS noi_growth_cagr,
+
+    -- METRIC 6: Real CAGR (inflation-adjusted)
+    CASE WHEN p.years_elapsed > 0 AND e.cpi_cagr IS NOT NULL
+        THEN (
+            (1 + (POWER(p.current_value / NULLIF(p.acquisition_price, 0), 1.0 / p.years_elapsed) - 1))
+            / (1 + e.cpi_cagr)
+        ) - 1
+        ELSE NULL
+    END AS real_cagr,
+
+    -- METRIC 7: Spread vs Treasury (placeholder — uses CPI as proxy until FRED rates loaded)
+    CASE WHEN p.years_elapsed > 0
+        THEN (POWER(p.current_value / NULLIF(p.acquisition_price, 0), 1.0 / p.years_elapsed) - 1) - COALESCE(e.cpi_cagr, 0)
+        ELSE NULL
+    END AS spread_vs_benchmark
+
+FROM props p
+LEFT JOIN leases l ON p.property_id = l.property_id
+LEFT JOIN fins f ON p.property_id = f.property_id
+CROSS JOIN econ e
+  );
+[0m21:15:22.472263 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:15:23.481042 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.009 seconds
+[0m21:15:23.483956 [info ] [Thread-2 (]: 5 of 5 OK created sql view model ANALYTICS.cagr_metrics ........................ [[32mSUCCESS 1[0m in 1.03s]
+[0m21:15:23.484688 [debug] [Thread-2 (]: Finished running node model.precision_cagr.cagr_metrics
+[0m21:15:23.487579 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m21:15:23.488383 [debug] [Dummy-1   ]: Connection 'model.precision_cagr.cagr_metrics' was properly closed.
+[0m21:15:23.488869 [debug] [Dummy-1   ]: Connection 'model.precision_cagr.stg_financials' was properly closed.
+[0m21:15:23.489294 [debug] [Dummy-1   ]: Connection 'model.precision_cagr.stg_leases' was properly closed.
+[0m21:15:23.489719 [debug] [Dummy-1   ]: Connection 'model.precision_cagr.stg_properties' was properly closed.
+[0m21:15:23.490278 [info ] [Dummy-1   ]: 
+[0m21:15:23.490779 [info ] [Dummy-1   ]: Finished running 2 project hooks, 5 view models in 0 hours 0 minutes and 3.74 seconds (3.74s).
+[0m21:15:23.492221 [debug] [Dummy-1   ]: Command end result
+[0m21:15:23.515987 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:15:23.517705 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:15:23.523951 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m21:15:23.524418 [info ] [Dummy-1   ]: 
+[0m21:15:23.524993 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m21:15:23.525435 [info ] [Dummy-1   ]: 
+[0m21:15:23.525929 [info ] [Dummy-1   ]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 TOTAL=7
+[0m21:15:23.527571 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.150788, "process_in_blocks": "0", "process_kernel_time": 0.83, "process_mem_max_rss": "454368", "process_out_blocks": "0", "process_user_time": 4.16}
+[0m21:15:23.528255 [debug] [Dummy-1   ]: Command `cli run` succeeded at 21:15:23.527948 after 5.15 seconds
+[0m21:15:23.528779 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 21:47:13.753613 | 0a6d9215-ecf5-400c-952d-6f0032e45718 ==============================
+[0m21:47:13.753613 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m21:47:13.754548 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': '/tmp/dbt/target/', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m21:47:14.039412 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m21:47:14.603374 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m21:47:14.762769 [info ] [Dummy-1   ]: Unable to do partial parsing because a project config has changed
+[0m21:47:16.715440 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:47:16.717511 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:47:16.760898 [info ] [Dummy-1   ]: Found 5 models, 1 test, 4 seeds, 7 operations, 3 sources, 475 macros
+[0m21:47:16.763291 [info ] [Dummy-1   ]: 
+[0m21:47:16.763833 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m21:47:16.764275 [info ] [Dummy-1   ]: 
+[0m21:47:16.765005 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m21:47:16.770648 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION'
+[0m21:47:16.851196 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION"
+[0m21:47:16.851809 [debug] [ThreadPool]: On list_PRECISION: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION"} */
+show terse schemas in database PRECISION
+    limit 10000
+[0m21:47:16.852309 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:47:17.361836 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.509 seconds
+[0m21:47:17.365864 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION_ANALYTICS_RAW'
+[0m21:47:17.366961 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_PRECISION, now list_PRECISION_ANALYTICS_ODS)
+[0m21:47:17.368119 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION_ANALYTICS_FINANCE_CURATED'
+[0m21:47:17.381285 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_RAW"
+[0m21:47:17.385066 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_ODS"
+[0m21:47:17.389916 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_FINANCE_CURATED"
+[0m21:47:17.390512 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_RAW"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:47:17.391088 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_ODS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_ODS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:47:17.391718 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_FINANCE_CURATED: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_FINANCE_CURATED"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:47:17.392238 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:47:17.392720 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:47:17.393170 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:47:17.898297 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.505 seconds
+[0m21:47:17.899064 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.506 seconds
+[0m21:47:17.903545 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_ODS"
+[0m21:47:17.905346 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_FINANCE_CURATED"
+[0m21:47:17.905897 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_ODS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_ODS"} */
+show objects in PRECISION.ANALYTICS_ODS
+    limit 10000
+    
+;
+[0m21:47:17.906425 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_FINANCE_CURATED: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_FINANCE_CURATED"} */
+show objects in PRECISION.ANALYTICS_FINANCE_CURATED
+    limit 10000
+    
+;
+[0m21:47:17.924973 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.533 seconds
+[0m21:47:17.927354 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_RAW"
+[0m21:47:17.927889 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_RAW"} */
+show objects in PRECISION.ANALYTICS_RAW
+    limit 10000
+    
+;
+[0m21:47:17.971763 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01c55dbf-0309-90b3-0029-6af3003a8ffa
+[0m21:47:17.972609 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01c55dbf-0309-90b3-0029-6af3003a8ffe
+[0m21:47:17.973136 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m21:47:17.973660 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m21:47:17.974302 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m21:47:17.974909 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m21:47:17.975403 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m21:47:17.975909 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m21:47:18.066693 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.138 seconds
+[0m21:47:18.069006 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ANALYTICS_RAW"
+[0m21:47:18.069560 [debug] [ThreadPool]: On list_PRECISION_ANALYTICS_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ANALYTICS_RAW"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:47:18.162618 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.092 seconds
+[0m21:47:18.174718 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-0"
+[0m21:47:18.180668 [info ] [Dummy-1   ]: 1 of 7 START hook: precision_cagr.on-run-start.0 ............................... [RUN]
+[0m21:47:18.182193 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:18.182754 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+-- Drop old views from PRECISION.ANALYTICS (staging models used to land here)
+  DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_ECONOMICS;
+[0m21:47:18.183257 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m21:47:18.732293 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.549 seconds
+[0m21:47:18.733035 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:18.733597 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_FINANCIALS;
+[0m21:47:18.865783 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.132 seconds
+[0m21:47:18.866468 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:18.867007 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_LEASES;
+[0m21:47:19.005505 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.138 seconds
+[0m21:47:19.006183 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:19.006694 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_PROPERTIES;
+[0m21:47:19.137982 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.131 seconds
+[0m21:47:19.138741 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:19.139271 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.CAGR_METRICS;
+[0m21:47:19.292207 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.152 seconds
+[0m21:47:19.292914 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:19.293470 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+-- Drop old seed tables and UDF from PRECISION.ANALYTICS_RAW
+  DROP TABLE IF EXISTS PRECISION.ANALYTICS_RAW.PROPERTIES;
+[0m21:47:19.425076 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.131 seconds
+[0m21:47:19.425798 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:19.426360 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP TABLE IF EXISTS PRECISION.ANALYTICS_RAW.LEASES;
+[0m21:47:19.564303 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.137 seconds
+[0m21:47:19.564978 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:19.565502 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP TABLE IF EXISTS PRECISION.ANALYTICS_RAW.FINANCIALS;
+[0m21:47:19.709535 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.143 seconds
+[0m21:47:19.710233 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:19.710789 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP TABLE IF EXISTS PRECISION.ANALYTICS_RAW.CPI_CONFIG;
+[0m21:47:19.805117 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.094 seconds
+[0m21:47:19.805830 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:19.806413 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP FUNCTION IF EXISTS PRECISION.ANALYTICS_RAW.GET_CPI_CONFIG(VARCHAR);
+[0m21:47:19.884989 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.078 seconds
+[0m21:47:19.885706 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:19.886252 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+-- Drop the old schema once emptied
+  DROP SCHEMA IF EXISTS PRECISION.ANALYTICS_RAW;
+[0m21:47:20.019732 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.133 seconds
+[0m21:47:20.021179 [info ] [Dummy-1   ]: 1 of 7 OK hook: precision_cagr.on-run-start.0 .................................. [[32mOK[0m in 1.85s]
+[0m21:47:20.024797 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-1"
+[0m21:47:20.025724 [info ] [Dummy-1   ]: 2 of 7 START hook: precision_cagr.on-run-start.1 ............................... [RUN]
+[0m21:47:20.026469 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:20.027003 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS PRECISION.RAW
+[0m21:47:20.100409 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.073 seconds
+[0m21:47:20.101727 [info ] [Dummy-1   ]: 2 of 7 OK hook: precision_cagr.on-run-start.1 .................................. [[32mOK[0m in 0.08s]
+[0m21:47:20.106921 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-2"
+[0m21:47:20.107867 [info ] [Dummy-1   ]: 3 of 7 START hook: precision_cagr.on-run-start.2 ............................... [RUN]
+[0m21:47:20.108725 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:20.109276 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS PRECISION.ODS
+[0m21:47:20.203804 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.094 seconds
+[0m21:47:20.205124 [info ] [Dummy-1   ]: 3 of 7 OK hook: precision_cagr.on-run-start.2 .................................. [[32mOK[0m in 0.10s]
+[0m21:47:20.208641 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-3"
+[0m21:47:20.209557 [info ] [Dummy-1   ]: 4 of 7 START hook: precision_cagr.on-run-start.3 ............................... [RUN]
+[0m21:47:20.210284 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:20.210776 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS PRECISION.ANALYTICS
+[0m21:47:20.260987 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.050 seconds
+[0m21:47:20.262320 [info ] [Dummy-1   ]: 4 of 7 OK hook: precision_cagr.on-run-start.3 .................................. [[32mOK[0m in 0.06s]
+[0m21:47:20.265799 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-4"
+[0m21:47:20.266723 [info ] [Dummy-1   ]: 5 of 7 START hook: precision_cagr.on-run-start.4 ............................... [RUN]
+[0m21:47:20.267473 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:20.268141 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS PRECISION.FINANCE_CURATED
+[0m21:47:20.331048 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.062 seconds
+[0m21:47:20.332352 [info ] [Dummy-1   ]: 5 of 7 OK hook: precision_cagr.on-run-start.4 .................................. [[32mOK[0m in 0.07s]
+[0m21:47:20.335984 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-5"
+[0m21:47:20.336880 [info ] [Dummy-1   ]: 6 of 7 START hook: precision_cagr.on-run-start.5 ............................... [RUN]
+[0m21:47:20.337740 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:20.338334 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS PRECISION.RAW.CPI_CONFIG (config_key VARCHAR, default_value VARCHAR, override_value VARCHAR, override_until_date DATE)
+[0m21:47:20.630066 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.291 seconds
+[0m21:47:20.631423 [info ] [Dummy-1   ]: 6 of 7 OK hook: precision_cagr.on-run-start.5 .................................. [[32mOK[0m in 0.30s]
+[0m21:47:20.634947 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-6"
+[0m21:47:20.635842 [info ] [Dummy-1   ]: 7 of 7 START hook: precision_cagr.on-run-start.6 ............................... [RUN]
+[0m21:47:20.636748 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:47:20.637330 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FUNCTION PRECISION.RAW.GET_CPI_CONFIG(p_config_key VARCHAR) RETURNS FLOAT LANGUAGE SQL AS $$
+  SELECT
+    CASE
+      WHEN override_value IS NOT NULL AND override_until_date >= CURRENT_DATE()
+        THEN override_value::FLOAT
+      ELSE default_value::FLOAT
+    END
+  FROM PRECISION.RAW.CPI_CONFIG
+  WHERE config_key = p_config_key
+  LIMIT 1
+$$
+[0m21:47:20.773065 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.135 seconds
+[0m21:47:20.774401 [info ] [Dummy-1   ]: 7 of 7 OK hook: precision_cagr.on-run-start.6 .................................. [[32mOK[0m in 0.14s]
+[0m21:47:20.774950 [info ] [Dummy-1   ]: 
+[0m21:47:20.779761 [debug] [Thread-2 (]: Began running node seed.precision_cagr.cpi_config
+[0m21:47:20.780366 [debug] [Thread-3 (]: Began running node seed.precision_cagr.financials
+[0m21:47:20.780935 [debug] [Thread-4 (]: Began running node seed.precision_cagr.leases
+[0m21:47:20.781520 [debug] [Thread-5 (]: Began running node seed.precision_cagr.properties
+[0m21:47:20.782208 [info ] [Thread-2 (]: 1 of 4 START seed file ANALYTICS_RAW.cpi_config ................................ [RUN]
+[0m21:47:20.782933 [info ] [Thread-3 (]: 2 of 4 START seed file ANALYTICS_RAW.financials ................................ [RUN]
+[0m21:47:20.783666 [info ] [Thread-4 (]: 3 of 4 START seed file ANALYTICS_RAW.leases .................................... [RUN]
+[0m21:47:20.784342 [info ] [Thread-5 (]: 4 of 4 START seed file ANALYTICS_RAW.properties ................................ [RUN]
+[0m21:47:20.785093 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_PRECISION_ANALYTICS_RAW, now seed.precision_cagr.cpi_config)
+[0m21:47:20.785717 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_PRECISION_ANALYTICS_FINANCE_CURATED, now seed.precision_cagr.financials)
+[0m21:47:20.786625 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_PRECISION_ANALYTICS_ODS, now seed.precision_cagr.leases)
+[0m21:47:20.787327 [debug] [Thread-5 (]: Acquiring new snowflake connection 'seed.precision_cagr.properties'
+[0m21:47:20.787879 [debug] [Thread-2 (]: Began compiling node seed.precision_cagr.cpi_config
+[0m21:47:20.788495 [debug] [Thread-3 (]: Began compiling node seed.precision_cagr.financials
+[0m21:47:20.789033 [debug] [Thread-4 (]: Began compiling node seed.precision_cagr.leases
+[0m21:47:20.789572 [debug] [Thread-5 (]: Began compiling node seed.precision_cagr.properties
+[0m21:47:20.790109 [debug] [Thread-2 (]: Began executing node seed.precision_cagr.cpi_config
+[0m21:47:20.790647 [debug] [Thread-3 (]: Began executing node seed.precision_cagr.financials
+[0m21:47:20.791155 [debug] [Thread-4 (]: Began executing node seed.precision_cagr.leases
+[0m21:47:20.791654 [debug] [Thread-5 (]: Began executing node seed.precision_cagr.properties
+[0m21:47:20.857244 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:47:20.861728 [debug] [Thread-3 (]: Using snowflake connection "seed.precision_cagr.financials"
+[0m21:47:20.862789 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+BEGIN
+[0m21:47:20.867593 [debug] [Thread-4 (]: Using snowflake connection "seed.precision_cagr.leases"
+[0m21:47:20.874183 [debug] [Thread-5 (]: Using snowflake connection "seed.precision_cagr.properties"
+[0m21:47:20.874869 [debug] [Thread-3 (]: On seed.precision_cagr.financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.financials"} */
+BEGIN
+[0m21:47:20.875550 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:47:20.876218 [debug] [Thread-4 (]: On seed.precision_cagr.leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.leases"} */
+BEGIN
+[0m21:47:20.876840 [debug] [Thread-5 (]: On seed.precision_cagr.properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.properties"} */
+BEGIN
+[0m21:47:20.877427 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m21:47:20.878391 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m21:47:20.879037 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m21:47:21.331485 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.453 seconds
+[0m21:47:21.332986 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.455 seconds
+[0m21:47:21.333822 [debug] [Thread-4 (]: Using snowflake connection "seed.precision_cagr.leases"
+[0m21:47:21.334530 [debug] [Thread-3 (]: Using snowflake connection "seed.precision_cagr.financials"
+[0m21:47:21.335200 [debug] [Thread-4 (]: On seed.precision_cagr.leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.leases"} */
+truncate table "PRECISION"."ANALYTICS_RAW"."LEASES"
+  ;
+[0m21:47:21.335840 [debug] [Thread-3 (]: On seed.precision_cagr.financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.financials"} */
+truncate table "PRECISION"."ANALYTICS_RAW"."FINANCIALS"
+  ;
+[0m21:47:21.367818 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.492 seconds
+[0m21:47:21.369000 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.490 seconds
+[0m21:47:21.369757 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:47:21.370422 [debug] [Thread-5 (]: Using snowflake connection "seed.precision_cagr.properties"
+[0m21:47:21.371085 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+truncate table "PRECISION"."ANALYTICS_RAW"."CPI_CONFIG"
+  ;
+[0m21:47:21.371709 [debug] [Thread-5 (]: On seed.precision_cagr.properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.properties"} */
+truncate table "PRECISION"."ANALYTICS_RAW"."PROPERTIES"
+  ;
+[0m21:47:21.390138 [debug] [Thread-4 (]: Snowflake adapter: Snowflake query id: 01c55dbf-0309-90b3-0029-6af3003d90ca
+[0m21:47:21.391193 [debug] [Thread-3 (]: Snowflake adapter: Snowflake query id: 01c55dbf-0309-90b3-0029-6af3003d90c6
+[0m21:47:21.391867 [debug] [Thread-4 (]: Snowflake adapter: Snowflake error: 002003 (02000): SQL compilation error:
+Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:47:21.392533 [debug] [Thread-3 (]: Snowflake adapter: Snowflake error: 002003 (02000): SQL compilation error:
+Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:47:21.393242 [debug] [Thread-4 (]: Snowflake adapter: Error running SQL: macro truncate_relation
+[0m21:47:21.393896 [debug] [Thread-3 (]: Snowflake adapter: Error running SQL: macro truncate_relation
+[0m21:47:21.394442 [debug] [Thread-4 (]: Snowflake adapter: Rolling back transaction.
+[0m21:47:21.394968 [debug] [Thread-3 (]: Snowflake adapter: Rolling back transaction.
+[0m21:47:21.403928 [debug] [Thread-4 (]: Database Error in seed leases (seeds/leases.csv)
+  002003 (02000): SQL compilation error:
+  Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:47:21.406656 [debug] [Thread-3 (]: Database Error in seed financials (seeds/financials.csv)
+  002003 (02000): SQL compilation error:
+  Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:47:21.410127 [error] [Thread-4 (]: 3 of 4 ERROR loading seed file ANALYTICS_RAW.leases ............................ [[31mERROR[0m in 0.62s]
+[0m21:47:21.410503 [error] [Thread-3 (]: 2 of 4 ERROR loading seed file ANALYTICS_RAW.financials ........................ [[31mERROR[0m in 0.62s]
+[0m21:47:21.411258 [debug] [Thread-4 (]: Finished running node seed.precision_cagr.leases
+[0m21:47:21.411913 [debug] [Thread-3 (]: Finished running node seed.precision_cagr.financials
+[0m21:47:21.412738 [debug] [Thread-8 (]: Marking all children of 'seed.precision_cagr.leases' to be skipped because of status 'error'.  Reason: Database Error in seed leases (seeds/leases.csv)
+  002003 (02000): SQL compilation error:
+  Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized..
+[0m21:47:21.414143 [debug] [Thread-8 (]: Marking all children of 'seed.precision_cagr.financials' to be skipped because of status 'error'.  Reason: Database Error in seed financials (seeds/financials.csv)
+  002003 (02000): SQL compilation error:
+  Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized..
+[0m21:47:21.438206 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c55dbf-0309-90b3-0029-6af3003d90d2
+[0m21:47:21.439031 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 002003 (02000): SQL compilation error:
+Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:47:21.439715 [debug] [Thread-2 (]: Snowflake adapter: Error running SQL: macro truncate_relation
+[0m21:47:21.440214 [debug] [Thread-2 (]: Snowflake adapter: Rolling back transaction.
+[0m21:47:21.445595 [debug] [Thread-2 (]: Database Error in seed cpi_config (seeds/cpi_config.csv)
+  002003 (02000): SQL compilation error:
+  Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:47:21.446576 [error] [Thread-2 (]: 1 of 4 ERROR loading seed file ANALYTICS_RAW.cpi_config ........................ [[31mERROR[0m in 0.66s]
+[0m21:47:21.447329 [debug] [Thread-2 (]: Finished running node seed.precision_cagr.cpi_config
+[0m21:47:21.447994 [debug] [Thread-8 (]: Marking all children of 'seed.precision_cagr.cpi_config' to be skipped because of status 'error'.  Reason: Database Error in seed cpi_config (seeds/cpi_config.csv)
+  002003 (02000): SQL compilation error:
+  Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized..
+[0m21:47:21.461524 [debug] [Thread-5 (]: Snowflake adapter: Snowflake query id: 01c55dbf-0309-90b3-0029-6af3003d90ce
+[0m21:47:21.462240 [debug] [Thread-5 (]: Snowflake adapter: Snowflake error: 002003 (02000): SQL compilation error:
+Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:47:21.462943 [debug] [Thread-5 (]: Snowflake adapter: Error running SQL: macro truncate_relation
+[0m21:47:21.463457 [debug] [Thread-5 (]: Snowflake adapter: Rolling back transaction.
+[0m21:47:21.468922 [debug] [Thread-5 (]: Database Error in seed properties (seeds/properties.csv)
+  002003 (02000): SQL compilation error:
+  Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:47:21.469904 [error] [Thread-5 (]: 4 of 4 ERROR loading seed file ANALYTICS_RAW.properties ........................ [[31mERROR[0m in 0.68s]
+[0m21:47:21.470639 [debug] [Thread-5 (]: Finished running node seed.precision_cagr.properties
+[0m21:47:21.471324 [debug] [Thread-8 (]: Marking all children of 'seed.precision_cagr.properties' to be skipped because of status 'error'.  Reason: Database Error in seed properties (seeds/properties.csv)
+  002003 (02000): SQL compilation error:
+  Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized..
+[0m21:47:21.474123 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m21:47:21.474883 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.leases' was properly closed.
+[0m21:47:21.475456 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.cpi_config' was properly closed.
+[0m21:47:21.475897 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.financials' was properly closed.
+[0m21:47:21.476317 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.properties' was properly closed.
+[0m21:47:21.476888 [info ] [Dummy-1   ]: 
+[0m21:47:21.477382 [info ] [Dummy-1   ]: Finished running 7 project hooks, 4 seeds in 0 hours 0 minutes and 4.71 seconds (4.71s).
+[0m21:47:21.479354 [debug] [Dummy-1   ]: Command end result
+[0m21:47:21.504967 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:47:21.506989 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:47:21.513359 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m21:47:21.513876 [info ] [Dummy-1   ]: 
+[0m21:47:21.514482 [info ] [Dummy-1   ]: [31mCompleted with 4 errors, 0 partial successes, and 0 warnings:[0m
+[0m21:47:21.514991 [info ] [Dummy-1   ]: 
+[0m21:47:21.515555 [error] [Dummy-1   ]:   Database Error in seed leases (seeds/leases.csv)
+  002003 (02000): SQL compilation error:
+  Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:47:21.515999 [info ] [Dummy-1   ]: 
+[0m21:47:21.516530 [error] [Dummy-1   ]:   Database Error in seed financials (seeds/financials.csv)
+  002003 (02000): SQL compilation error:
+  Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:47:21.516953 [info ] [Dummy-1   ]: 
+[0m21:47:21.517466 [error] [Dummy-1   ]:   Database Error in seed cpi_config (seeds/cpi_config.csv)
+  002003 (02000): SQL compilation error:
+  Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:47:21.517890 [info ] [Dummy-1   ]: 
+[0m21:47:21.518509 [error] [Dummy-1   ]:   Database Error in seed properties (seeds/properties.csv)
+  002003 (02000): SQL compilation error:
+  Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:47:21.518965 [info ] [Dummy-1   ]: 
+[0m21:47:21.519425 [info ] [Dummy-1   ]: Done. PASS=7 WARN=0 ERROR=4 SKIP=0 TOTAL=11
+[0m21:47:21.521057 [debug] [Dummy-1   ]: Resource report: {"command_name": "seed", "command_success": false, "command_wall_clock_time": 7.8425736, "process_in_blocks": "0", "process_kernel_time": 0.86, "process_mem_max_rss": "510052", "process_out_blocks": "0", "process_user_time": 6.0}
+[0m21:47:21.521638 [debug] [Dummy-1   ]: Command `cli seed` failed at 21:47:21.521400 after 7.84 seconds
+[0m21:47:21.522159 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 21:49:18.728002 | b123b324-ed08-4b52-9585-6bd4aa685730 ==============================
+[0m21:49:18.728002 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m21:49:18.728971 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m21:49:19.012452 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m21:49:19.596358 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m21:49:19.827241 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m21:49:19.828522 [debug] [Dummy-1   ]: Partial parsing: added file: precision_cagr://macros/generate_schema_name.sql
+[0m21:49:19.895988 [info ] [Dummy-1   ]: Unable to do partial parsing because change detected to override macro. Starting full parse.
+[0m21:49:21.733076 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:49:21.735146 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:49:21.779308 [info ] [Dummy-1   ]: Found 5 models, 1 test, 4 seeds, 7 operations, 3 sources, 476 macros
+[0m21:49:21.781716 [info ] [Dummy-1   ]: 
+[0m21:49:21.782260 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m21:49:21.782781 [info ] [Dummy-1   ]: 
+[0m21:49:21.783535 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m21:49:21.789225 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION'
+[0m21:49:21.908262 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION"
+[0m21:49:21.908885 [debug] [ThreadPool]: On list_PRECISION: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION"} */
+show terse schemas in database PRECISION
+    limit 10000
+[0m21:49:21.909385 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:49:22.381983 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.472 seconds
+[0m21:49:22.385913 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION_FINANCE_CURATED'
+[0m21:49:22.387055 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_PRECISION, now list_PRECISION_RAW)
+[0m21:49:22.400382 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION_ODS'
+[0m21:49:22.401358 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_FINANCE_CURATED"
+[0m21:49:22.405927 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_RAW"
+[0m21:49:22.409770 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ODS"
+[0m21:49:22.410436 [debug] [ThreadPool]: On list_PRECISION_FINANCE_CURATED: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_FINANCE_CURATED"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:49:22.410945 [debug] [ThreadPool]: On list_PRECISION_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_RAW"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:49:22.411439 [debug] [ThreadPool]: On list_PRECISION_ODS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ODS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:49:22.411928 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:49:22.412445 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:49:22.412950 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:49:22.791177 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.378 seconds
+[0m21:49:22.795839 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ODS"
+[0m21:49:22.796596 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.385 seconds
+[0m21:49:22.797171 [debug] [ThreadPool]: On list_PRECISION_ODS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ODS"} */
+show objects in PRECISION.ODS
+    limit 10000
+    
+;
+[0m21:49:22.799397 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_FINANCE_CURATED"
+[0m21:49:22.800230 [debug] [ThreadPool]: On list_PRECISION_FINANCE_CURATED: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_FINANCE_CURATED"} */
+show objects in PRECISION.FINANCE_CURATED
+    limit 10000
+    
+;
+[0m21:49:22.813755 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.401 seconds
+[0m21:49:22.815734 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_RAW"
+[0m21:49:22.816245 [debug] [ThreadPool]: On list_PRECISION_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_RAW"} */
+show objects in PRECISION.RAW
+    limit 10000
+    
+;
+[0m21:49:22.894282 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.093 seconds
+[0m21:49:22.895147 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.095 seconds
+[0m21:49:22.897038 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_FINANCE_CURATED"
+[0m21:49:22.898843 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ODS"
+[0m21:49:22.899384 [debug] [ThreadPool]: On list_PRECISION_FINANCE_CURATED: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_FINANCE_CURATED"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:49:22.899908 [debug] [ThreadPool]: On list_PRECISION_ODS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ODS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:49:22.936240 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.119 seconds
+[0m21:49:22.938359 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_RAW"
+[0m21:49:22.938899 [debug] [ThreadPool]: On list_PRECISION_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_RAW"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:49:22.982544 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.082 seconds
+[0m21:49:22.985011 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.085 seconds
+[0m21:49:22.998447 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.059 seconds
+[0m21:49:23.008952 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-0"
+[0m21:49:23.014679 [info ] [Dummy-1   ]: 1 of 7 START hook: precision_cagr.on-run-start.0 ............................... [RUN]
+[0m21:49:23.016251 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:49:23.016793 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+-- Drop old views from PRECISION.ANALYTICS (staging models used to land here)
+  DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_ECONOMICS;
+[0m21:49:23.017303 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m21:49:23.444056 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.427 seconds
+[0m21:49:23.444760 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:49:23.445281 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_FINANCIALS;
+[0m21:49:23.519002 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.073 seconds
+[0m21:49:23.519679 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:49:23.520206 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_LEASES;
+[0m21:49:23.584231 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.063 seconds
+[0m21:49:23.584925 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:49:23.585449 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_PROPERTIES;
+[0m21:49:23.647084 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.061 seconds
+[0m21:49:23.647792 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:49:23.648434 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.CAGR_METRICS;
+[0m21:49:23.700857 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.052 seconds
+[0m21:49:23.701538 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:49:23.702041 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+-- Drop old seed tables and UDF from PRECISION.ANALYTICS_RAW
+  DROP TABLE IF EXISTS PRECISION.ANALYTICS_RAW.PROPERTIES;
+[0m21:49:23.752963 [debug] [Dummy-1   ]: Snowflake adapter: Snowflake query id: 01c55dc1-0309-9293-0029-6af3003a5f2e
+[0m21:49:23.753616 [debug] [Dummy-1   ]: Snowflake adapter: Snowflake error: 002003 (02000): SQL compilation error:
+Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:49:23.754390 [info ] [Dummy-1   ]: 1 of 7 ERROR hook: precision_cagr.on-run-start.0 ............................... [[31mERROR[0m in 0.75s]
+[0m21:49:23.755100 [info ] [Dummy-1   ]: 2 of 7 SKIP hook: precision_cagr.on-run-start.1 ................................ [[33mSKIP[0m in 0.00s]
+[0m21:49:23.755733 [info ] [Dummy-1   ]: 3 of 7 SKIP hook: precision_cagr.on-run-start.2 ................................ [[33mSKIP[0m in 0.00s]
+[0m21:49:23.756346 [info ] [Dummy-1   ]: 4 of 7 SKIP hook: precision_cagr.on-run-start.3 ................................ [[33mSKIP[0m in 0.00s]
+[0m21:49:23.756948 [info ] [Dummy-1   ]: 5 of 7 SKIP hook: precision_cagr.on-run-start.4 ................................ [[33mSKIP[0m in 0.00s]
+[0m21:49:23.757556 [info ] [Dummy-1   ]: 6 of 7 SKIP hook: precision_cagr.on-run-start.5 ................................ [[33mSKIP[0m in 0.00s]
+[0m21:49:23.758214 [info ] [Dummy-1   ]: 7 of 7 SKIP hook: precision_cagr.on-run-start.6 ................................ [[33mSKIP[0m in 0.00s]
+[0m21:49:23.758711 [info ] [Dummy-1   ]: 
+[0m21:49:23.763541 [debug] [Thread-2 (]: Began running node seed.precision_cagr.cpi_config
+[0m21:49:23.764468 [debug] [Thread-3 (]: Began running node seed.precision_cagr.financials
+[0m21:49:23.765040 [debug] [Thread-4 (]: Began running node seed.precision_cagr.leases
+[0m21:49:23.765609 [debug] [Thread-5 (]: Began running node seed.precision_cagr.properties
+[0m21:49:23.766288 [info ] [Thread-2 (]: 1 of 4 START seed file RAW.cpi_config .......................................... [RUN]
+[0m21:49:23.767012 [info ] [Thread-3 (]: 2 of 4 START seed file RAW.financials .......................................... [RUN]
+[0m21:49:23.767686 [info ] [Thread-4 (]: 3 of 4 START seed file RAW.leases .............................................. [RUN]
+[0m21:49:23.768429 [info ] [Thread-5 (]: 4 of 4 START seed file RAW.properties .......................................... [RUN]
+[0m21:49:23.769126 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_PRECISION_FINANCE_CURATED, now seed.precision_cagr.cpi_config)
+[0m21:49:23.769717 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_PRECISION_RAW, now seed.precision_cagr.financials)
+[0m21:49:23.770282 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_PRECISION_ODS, now seed.precision_cagr.leases)
+[0m21:49:23.770923 [debug] [Thread-5 (]: Acquiring new snowflake connection 'seed.precision_cagr.properties'
+[0m21:49:23.771427 [debug] [Thread-2 (]: Began compiling node seed.precision_cagr.cpi_config
+[0m21:49:23.771924 [debug] [Thread-3 (]: Began compiling node seed.precision_cagr.financials
+[0m21:49:23.772406 [debug] [Thread-4 (]: Began compiling node seed.precision_cagr.leases
+[0m21:49:23.772913 [debug] [Thread-5 (]: Began compiling node seed.precision_cagr.properties
+[0m21:49:23.773426 [debug] [Thread-2 (]: Began executing node seed.precision_cagr.cpi_config
+[0m21:49:23.773923 [debug] [Thread-3 (]: Began executing node seed.precision_cagr.financials
+[0m21:49:23.774410 [debug] [Thread-4 (]: Began executing node seed.precision_cagr.leases
+[0m21:49:23.774909 [debug] [Thread-5 (]: Began executing node seed.precision_cagr.properties
+[0m21:49:23.828959 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:49:23.843486 [debug] [Thread-3 (]: Using snowflake connection "seed.precision_cagr.financials"
+[0m21:49:23.844923 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+BEGIN
+[0m21:49:23.846581 [debug] [Thread-4 (]: Using snowflake connection "seed.precision_cagr.leases"
+[0m21:49:23.847348 [debug] [Thread-3 (]: On seed.precision_cagr.financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.financials"} */
+create table PRECISION.RAW.financials (financial_id text,property_id text,period_date date,noi integer,capital_expenditures integer,distributions integer)
+[0m21:49:23.851432 [debug] [Thread-5 (]: Using snowflake connection "seed.precision_cagr.properties"
+[0m21:49:23.852099 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:49:23.852690 [debug] [Thread-4 (]: On seed.precision_cagr.leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.leases"} */
+create table PRECISION.RAW.leases (lease_id text,property_id text,tenant_name text,lease_start_date date,lease_end_date date,monthly_rent integer,annual_escalation_pct float8,projected_end_value integer)
+[0m21:49:23.853221 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m21:49:23.853764 [debug] [Thread-5 (]: On seed.precision_cagr.properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.properties"} */
+create table PRECISION.RAW.properties (property_id text,property_name text,address text,property_type text,acquisition_date date,acquisition_price integer,current_value integer)
+[0m21:49:23.854649 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m21:49:23.855408 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m21:49:24.332439 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.480 seconds
+[0m21:49:24.333260 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:49:24.333921 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+truncate table "PRECISION"."RAW"."CPI_CONFIG"
+  ;
+[0m21:49:24.456032 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.600 seconds
+[0m21:49:24.470967 [debug] [Thread-5 (]: Using snowflake connection "seed.precision_cagr.properties"
+[0m21:49:24.471610 [debug] [Thread-5 (]: On seed.precision_cagr.properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.properties"} */
+BEGIN
+[0m21:49:24.481319 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.627 seconds
+[0m21:49:24.482052 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.629 seconds
+[0m21:49:24.482822 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.148 seconds
+[0m21:49:24.484671 [debug] [Thread-4 (]: Using snowflake connection "seed.precision_cagr.leases"
+[0m21:49:24.486586 [debug] [Thread-3 (]: Using snowflake connection "seed.precision_cagr.financials"
+[0m21:49:24.487308 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:49:24.487884 [debug] [Thread-4 (]: On seed.precision_cagr.leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.leases"} */
+BEGIN
+[0m21:49:24.488473 [debug] [Thread-3 (]: On seed.precision_cagr.financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.financials"} */
+BEGIN
+[0m21:49:24.489093 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+COMMIT
+[0m21:49:24.612107 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.140 seconds
+[0m21:49:24.613229 [debug] [Thread-5 (]: Using snowflake connection "seed.precision_cagr.properties"
+[0m21:49:24.613806 [debug] [Thread-5 (]: On seed.precision_cagr.properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.properties"} */
+insert into PRECISION.RAW.properties (property_id, property_name, address, property_type, acquisition_date, acquisition_price, current_value) values
+            (%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s)...
+[0m21:49:24.614543 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.125 seconds
+[0m21:49:24.616079 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.126 seconds
+[0m21:49:24.617388 [debug] [Thread-3 (]: Using snowflake connection "seed.precision_cagr.financials"
+[0m21:49:24.618404 [debug] [Thread-4 (]: Using snowflake connection "seed.precision_cagr.leases"
+[0m21:49:24.618968 [debug] [Thread-3 (]: On seed.precision_cagr.financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.financials"} */
+insert into PRECISION.RAW.financials (financial_id, property_id, period_date, noi, capital_expenditures, distributions) values
+            (%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,...
+[0m21:49:24.619503 [debug] [Thread-4 (]: On seed.precision_cagr.leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.leases"} */
+insert into PRECISION.RAW.leases (lease_id, property_id, tenant_name, lease_start_date, lease_end_date, monthly_rent, annual_escalation_pct, projected_end_value) values
+            (%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s)...
+[0m21:49:24.808266 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.318 seconds
+[0m21:49:24.810219 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:49:24.810785 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+BEGIN
+[0m21:49:24.901683 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.090 seconds
+[0m21:49:24.902652 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:49:24.903201 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+insert into PRECISION.RAW.cpi_config (config_key, default_value, override_value, override_until_date) values
+            (%s,%s,%s,%s)...
+[0m21:49:24.974202 [debug] [Thread-4 (]: SQL status: SUCCESS 5 in 0.353 seconds
+[0m21:49:24.975011 [debug] [Thread-4 (]: Using snowflake connection "seed.precision_cagr.leases"
+[0m21:49:24.975549 [debug] [Thread-4 (]: On seed.precision_cagr.leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.leases"} */
+COMMIT
+[0m21:49:24.994885 [debug] [Thread-3 (]: SQL status: SUCCESS 20 in 0.375 seconds
+[0m21:49:24.995718 [debug] [Thread-5 (]: SQL status: SUCCESS 5 in 0.381 seconds
+[0m21:49:24.996432 [debug] [Thread-3 (]: Using snowflake connection "seed.precision_cagr.financials"
+[0m21:49:24.997069 [debug] [Thread-5 (]: Using snowflake connection "seed.precision_cagr.properties"
+[0m21:49:24.997608 [debug] [Thread-3 (]: On seed.precision_cagr.financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.financials"} */
+COMMIT
+[0m21:49:24.998166 [debug] [Thread-5 (]: On seed.precision_cagr.properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.properties"} */
+COMMIT
+[0m21:49:25.256504 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.353 seconds
+[0m21:49:25.257279 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:49:25.257800 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+COMMIT
+[0m21:49:25.347884 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.372 seconds
+[0m21:49:25.354122 [debug] [Thread-4 (]: Writing runtime SQL for node "seed.precision_cagr.leases"
+[0m21:49:25.380224 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.381 seconds
+[0m21:49:25.381888 [debug] [Thread-3 (]: Writing runtime SQL for node "seed.precision_cagr.financials"
+[0m21:49:25.385155 [info ] [Thread-4 (]: 3 of 4 OK loaded seed file RAW.leases .......................................... [[32mINSERT 5[0m in 1.61s]
+[0m21:49:25.385817 [info ] [Thread-3 (]: 2 of 4 OK loaded seed file RAW.financials ...................................... [[32mINSERT 20[0m in 1.62s]
+[0m21:49:25.386794 [debug] [Thread-4 (]: Finished running node seed.precision_cagr.leases
+[0m21:49:25.387506 [debug] [Thread-3 (]: Finished running node seed.precision_cagr.financials
+[0m21:49:25.400093 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.401 seconds
+[0m21:49:25.400999 [debug] [Thread-5 (]: Writing runtime SQL for node "seed.precision_cagr.properties"
+[0m21:49:25.403789 [info ] [Thread-5 (]: 4 of 4 OK loaded seed file RAW.properties ...................................... [[32mINSERT 5[0m in 1.63s]
+[0m21:49:25.404519 [debug] [Thread-5 (]: Finished running node seed.precision_cagr.properties
+[0m21:49:25.612593 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.354 seconds
+[0m21:49:25.613537 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.precision_cagr.cpi_config"
+[0m21:49:25.616284 [info ] [Thread-2 (]: 1 of 4 OK loaded seed file RAW.cpi_config ...................................... [[32mINSERT 1[0m in 1.85s]
+[0m21:49:25.617023 [debug] [Thread-2 (]: Finished running node seed.precision_cagr.cpi_config
+[0m21:49:25.619727 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m21:49:25.620541 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.financials' was properly closed.
+[0m21:49:25.621008 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.cpi_config' was properly closed.
+[0m21:49:25.621438 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.leases' was properly closed.
+[0m21:49:25.621844 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.properties' was properly closed.
+[0m21:49:25.622386 [info ] [Dummy-1   ]: 
+[0m21:49:25.622891 [info ] [Dummy-1   ]: Finished running 7 project hooks, 4 seeds in 0 hours 0 minutes and 3.84 seconds (3.84s).
+[0m21:49:25.624279 [debug] [Dummy-1   ]: Command end result
+[0m21:49:25.649233 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:49:25.651151 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:49:25.657169 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m21:49:25.657659 [info ] [Dummy-1   ]: 
+[0m21:49:25.658328 [info ] [Dummy-1   ]: [31mCompleted with 7 errors, 0 partial successes, and 0 warnings:[0m
+[0m21:49:25.658826 [info ] [Dummy-1   ]: 
+[0m21:49:25.659453 [error] [Dummy-1   ]:   precision_cagr.on-run-start.0 failed, error:
+ 002003 (02000): SQL compilation error:
+Schema 'PRECISION.ANALYTICS_RAW' does not exist or not authorized.
+[0m21:49:25.659918 [debug] [Dummy-1   ]: 
+[0m21:49:25.660319 [debug] [Dummy-1   ]:   precision_cagr.on-run-start.1 skipped
+[0m21:49:25.660711 [debug] [Dummy-1   ]: 
+[0m21:49:25.661101 [debug] [Dummy-1   ]:   precision_cagr.on-run-start.2 skipped
+[0m21:49:25.661513 [debug] [Dummy-1   ]: 
+[0m21:49:25.661912 [debug] [Dummy-1   ]:   precision_cagr.on-run-start.3 skipped
+[0m21:49:25.662318 [debug] [Dummy-1   ]: 
+[0m21:49:25.662733 [debug] [Dummy-1   ]:   precision_cagr.on-run-start.4 skipped
+[0m21:49:25.663169 [debug] [Dummy-1   ]: 
+[0m21:49:25.663571 [debug] [Dummy-1   ]:   precision_cagr.on-run-start.5 skipped
+[0m21:49:25.663979 [debug] [Dummy-1   ]: 
+[0m21:49:25.664366 [debug] [Dummy-1   ]:   precision_cagr.on-run-start.6 skipped
+[0m21:49:25.664782 [info ] [Dummy-1   ]: 
+[0m21:49:25.665273 [info ] [Dummy-1   ]: Done. PASS=4 WARN=0 ERROR=1 SKIP=6 TOTAL=11
+[0m21:49:25.666923 [debug] [Dummy-1   ]: Resource report: {"command_name": "seed", "command_success": false, "command_wall_clock_time": 7.0132093, "process_in_blocks": "0", "process_kernel_time": 0.97, "process_mem_max_rss": "508436", "process_out_blocks": "0", "process_user_time": 6.14}
+[0m21:49:25.667519 [debug] [Dummy-1   ]: Command `cli seed` failed at 21:49:25.667267 after 7.01 seconds
+[0m21:49:25.668042 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 21:50:09.481590 | 8f361001-bf1b-47d2-bbba-9eeb2267a234 ==============================
+[0m21:50:09.481590 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m21:50:09.482528 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'static_parser': 'True', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m21:50:09.767177 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m21:50:10.340685 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m21:50:10.637315 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m21:50:10.638288 [debug] [Dummy-1   ]: Partial parsing: updated file: precision_cagr://macros/teardown_old_objects.sql
+[0m21:50:10.886770 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:50:10.889030 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:50:10.934675 [info ] [Dummy-1   ]: Found 5 models, 1 test, 4 seeds, 7 operations, 3 sources, 476 macros
+[0m21:50:10.937215 [info ] [Dummy-1   ]: 
+[0m21:50:10.937861 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m21:50:10.939804 [info ] [Dummy-1   ]: 
+[0m21:50:10.940682 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m21:50:10.946549 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION'
+[0m21:50:11.041977 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION"
+[0m21:50:11.042544 [debug] [ThreadPool]: On list_PRECISION: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION"} */
+show terse schemas in database PRECISION
+    limit 10000
+[0m21:50:11.043034 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:50:11.603139 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.560 seconds
+[0m21:50:11.607492 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION_ODS'
+[0m21:50:11.608773 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_PRECISION, now list_PRECISION_FINANCE_CURATED)
+[0m21:50:11.615527 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION_RAW'
+[0m21:50:11.623418 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ODS"
+[0m21:50:11.628330 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_FINANCE_CURATED"
+[0m21:50:11.632155 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_RAW"
+[0m21:50:11.632696 [debug] [ThreadPool]: On list_PRECISION_ODS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ODS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:50:11.633183 [debug] [ThreadPool]: On list_PRECISION_FINANCE_CURATED: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_FINANCE_CURATED"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:50:11.633656 [debug] [ThreadPool]: On list_PRECISION_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_RAW"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:50:11.634085 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:50:11.634481 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:50:11.634884 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:50:12.088008 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.454 seconds
+[0m21:50:12.088929 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.454 seconds
+[0m21:50:12.089653 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.455 seconds
+[0m21:50:12.094345 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ODS"
+[0m21:50:12.096361 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_RAW"
+[0m21:50:12.098205 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_FINANCE_CURATED"
+[0m21:50:12.098783 [debug] [ThreadPool]: On list_PRECISION_ODS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ODS"} */
+show objects in PRECISION.ODS
+    limit 10000
+    
+;
+[0m21:50:12.099246 [debug] [ThreadPool]: On list_PRECISION_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_RAW"} */
+show objects in PRECISION.RAW
+    limit 10000
+    
+;
+[0m21:50:12.099680 [debug] [ThreadPool]: On list_PRECISION_FINANCE_CURATED: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_FINANCE_CURATED"} */
+show objects in PRECISION.FINANCE_CURATED
+    limit 10000
+    
+;
+[0m21:50:12.201706 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.101 seconds
+[0m21:50:12.203621 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ODS"
+[0m21:50:12.204091 [debug] [ThreadPool]: On list_PRECISION_ODS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ODS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:50:12.211298 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.110 seconds
+[0m21:50:12.213164 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_FINANCE_CURATED"
+[0m21:50:12.213658 [debug] [ThreadPool]: On list_PRECISION_FINANCE_CURATED: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_FINANCE_CURATED"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:50:12.224540 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.124 seconds
+[0m21:50:12.226687 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_RAW"
+[0m21:50:12.227210 [debug] [ThreadPool]: On list_PRECISION_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_RAW"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:50:12.310160 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.105 seconds
+[0m21:50:12.316412 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.102 seconds
+[0m21:50:12.339968 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.112 seconds
+[0m21:50:12.352697 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-0"
+[0m21:50:12.358856 [info ] [Dummy-1   ]: 1 of 7 START hook: precision_cagr.on-run-start.0 ............................... [RUN]
+[0m21:50:12.360030 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:50:12.360539 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+-- Drop old views from PRECISION.ANALYTICS (staging models used to land here)
+  DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_ECONOMICS;
+[0m21:50:12.360997 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m21:50:12.743571 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.382 seconds
+[0m21:50:12.744266 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:50:12.744786 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_FINANCIALS;
+[0m21:50:12.811460 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.066 seconds
+[0m21:50:12.812143 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:50:12.812679 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_LEASES;
+[0m21:50:12.859300 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.046 seconds
+[0m21:50:12.860023 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:50:12.860559 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_PROPERTIES;
+[0m21:50:12.913603 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.052 seconds
+[0m21:50:12.914333 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:50:12.914886 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.CAGR_METRICS;
+[0m21:50:12.970095 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.055 seconds
+[0m21:50:12.970802 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:50:12.971301 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+-- Drop the old ANALYTICS_RAW schema and all its objects in one step
+  DROP SCHEMA IF EXISTS PRECISION.ANALYTICS_RAW CASCADE;
+[0m21:50:13.015463 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.044 seconds
+[0m21:50:13.016842 [info ] [Dummy-1   ]: 1 of 7 OK hook: precision_cagr.on-run-start.0 .................................. [[32mOK[0m in 0.67s]
+[0m21:50:13.020552 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-1"
+[0m21:50:13.021500 [info ] [Dummy-1   ]: 2 of 7 START hook: precision_cagr.on-run-start.1 ............................... [RUN]
+[0m21:50:13.022264 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:50:13.022769 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS PRECISION.RAW
+[0m21:50:13.094207 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.071 seconds
+[0m21:50:13.095606 [info ] [Dummy-1   ]: 2 of 7 OK hook: precision_cagr.on-run-start.1 .................................. [[32mOK[0m in 0.08s]
+[0m21:50:13.100838 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-2"
+[0m21:50:13.101821 [info ] [Dummy-1   ]: 3 of 7 START hook: precision_cagr.on-run-start.2 ............................... [RUN]
+[0m21:50:13.102575 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:50:13.103066 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS PRECISION.ODS
+[0m21:50:13.171960 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.068 seconds
+[0m21:50:13.173268 [info ] [Dummy-1   ]: 3 of 7 OK hook: precision_cagr.on-run-start.2 .................................. [[32mOK[0m in 0.08s]
+[0m21:50:13.176638 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-3"
+[0m21:50:13.177529 [info ] [Dummy-1   ]: 4 of 7 START hook: precision_cagr.on-run-start.3 ............................... [RUN]
+[0m21:50:13.178326 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:50:13.178823 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS PRECISION.ANALYTICS
+[0m21:50:13.232085 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.053 seconds
+[0m21:50:13.233448 [info ] [Dummy-1   ]: 4 of 7 OK hook: precision_cagr.on-run-start.3 .................................. [[32mOK[0m in 0.06s]
+[0m21:50:13.236918 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-4"
+[0m21:50:13.237867 [info ] [Dummy-1   ]: 5 of 7 START hook: precision_cagr.on-run-start.4 ............................... [RUN]
+[0m21:50:13.238730 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:50:13.239231 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS PRECISION.FINANCE_CURATED
+[0m21:50:13.286760 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.047 seconds
+[0m21:50:13.288169 [info ] [Dummy-1   ]: 5 of 7 OK hook: precision_cagr.on-run-start.4 .................................. [[32mOK[0m in 0.05s]
+[0m21:50:13.291746 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-5"
+[0m21:50:13.292683 [info ] [Dummy-1   ]: 6 of 7 START hook: precision_cagr.on-run-start.5 ............................... [RUN]
+[0m21:50:13.293557 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:50:13.294042 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS PRECISION.RAW.CPI_CONFIG (config_key VARCHAR, default_value VARCHAR, override_value VARCHAR, override_until_date DATE)
+[0m21:50:13.608235 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.313 seconds
+[0m21:50:13.609623 [info ] [Dummy-1   ]: 6 of 7 OK hook: precision_cagr.on-run-start.5 .................................. [[32mOK[0m in 0.32s]
+[0m21:50:13.613253 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-6"
+[0m21:50:13.614230 [info ] [Dummy-1   ]: 7 of 7 START hook: precision_cagr.on-run-start.6 ............................... [RUN]
+[0m21:50:13.615167 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:50:13.615701 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FUNCTION PRECISION.RAW.GET_CPI_CONFIG(p_config_key VARCHAR) RETURNS FLOAT LANGUAGE SQL AS $$
+  SELECT
+    CASE
+      WHEN override_value IS NOT NULL AND override_until_date >= CURRENT_DATE()
+        THEN override_value::FLOAT
+      ELSE default_value::FLOAT
+    END
+  FROM PRECISION.RAW.CPI_CONFIG
+  WHERE config_key = p_config_key
+  LIMIT 1
+$$
+[0m21:50:13.721474 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.105 seconds
+[0m21:50:13.722923 [info ] [Dummy-1   ]: 7 of 7 OK hook: precision_cagr.on-run-start.6 .................................. [[32mOK[0m in 0.11s]
+[0m21:50:13.723470 [info ] [Dummy-1   ]: 
+[0m21:50:13.728392 [debug] [Thread-2 (]: Began running node seed.precision_cagr.cpi_config
+[0m21:50:13.729011 [debug] [Thread-3 (]: Began running node seed.precision_cagr.financials
+[0m21:50:13.729560 [debug] [Thread-4 (]: Began running node seed.precision_cagr.leases
+[0m21:50:13.730146 [debug] [Thread-5 (]: Began running node seed.precision_cagr.properties
+[0m21:50:13.730839 [info ] [Thread-2 (]: 1 of 4 START seed file RAW.cpi_config .......................................... [RUN]
+[0m21:50:13.731500 [info ] [Thread-3 (]: 2 of 4 START seed file RAW.financials .......................................... [RUN]
+[0m21:50:13.732138 [info ] [Thread-4 (]: 3 of 4 START seed file RAW.leases .............................................. [RUN]
+[0m21:50:13.732810 [info ] [Thread-5 (]: 4 of 4 START seed file RAW.properties .......................................... [RUN]
+[0m21:50:13.735111 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_PRECISION_ODS, now seed.precision_cagr.cpi_config)
+[0m21:50:13.735760 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_PRECISION_RAW, now seed.precision_cagr.financials)
+[0m21:50:13.736324 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_PRECISION_FINANCE_CURATED, now seed.precision_cagr.leases)
+[0m21:50:13.736967 [debug] [Thread-5 (]: Acquiring new snowflake connection 'seed.precision_cagr.properties'
+[0m21:50:13.737477 [debug] [Thread-2 (]: Began compiling node seed.precision_cagr.cpi_config
+[0m21:50:13.737951 [debug] [Thread-3 (]: Began compiling node seed.precision_cagr.financials
+[0m21:50:13.738495 [debug] [Thread-4 (]: Began compiling node seed.precision_cagr.leases
+[0m21:50:13.738948 [debug] [Thread-5 (]: Began compiling node seed.precision_cagr.properties
+[0m21:50:13.739471 [debug] [Thread-2 (]: Began executing node seed.precision_cagr.cpi_config
+[0m21:50:13.739947 [debug] [Thread-3 (]: Began executing node seed.precision_cagr.financials
+[0m21:50:13.740403 [debug] [Thread-4 (]: Began executing node seed.precision_cagr.leases
+[0m21:50:13.740879 [debug] [Thread-5 (]: Began executing node seed.precision_cagr.properties
+[0m21:50:13.806920 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:50:13.803316 [debug] [Thread-3 (]: Using snowflake connection "seed.precision_cagr.financials"
+[0m21:50:13.816958 [debug] [Thread-4 (]: Using snowflake connection "seed.precision_cagr.leases"
+[0m21:50:13.817696 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+BEGIN
+[0m21:50:13.824430 [debug] [Thread-5 (]: Using snowflake connection "seed.precision_cagr.properties"
+[0m21:50:13.825072 [debug] [Thread-3 (]: On seed.precision_cagr.financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.financials"} */
+BEGIN
+[0m21:50:13.825718 [debug] [Thread-4 (]: On seed.precision_cagr.leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.leases"} */
+BEGIN
+[0m21:50:13.826392 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:50:13.827079 [debug] [Thread-5 (]: On seed.precision_cagr.properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.properties"} */
+BEGIN
+[0m21:50:13.827713 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m21:50:13.828437 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m21:50:13.829393 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m21:50:14.237124 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.409 seconds
+[0m21:50:14.238289 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.409 seconds
+[0m21:50:14.239147 [debug] [Thread-3 (]: Using snowflake connection "seed.precision_cagr.financials"
+[0m21:50:14.239909 [debug] [Thread-5 (]: Using snowflake connection "seed.precision_cagr.properties"
+[0m21:50:14.240612 [debug] [Thread-3 (]: On seed.precision_cagr.financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.financials"} */
+truncate table "PRECISION"."RAW"."FINANCIALS"
+  ;
+[0m21:50:14.241284 [debug] [Thread-5 (]: On seed.precision_cagr.properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.properties"} */
+truncate table "PRECISION"."RAW"."PROPERTIES"
+  ;
+[0m21:50:14.249007 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.420 seconds
+[0m21:50:14.249842 [debug] [Thread-4 (]: Using snowflake connection "seed.precision_cagr.leases"
+[0m21:50:14.250537 [debug] [Thread-4 (]: On seed.precision_cagr.leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.leases"} */
+truncate table "PRECISION"."RAW"."LEASES"
+  ;
+[0m21:50:14.254544 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.428 seconds
+[0m21:50:14.255331 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:50:14.255951 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+truncate table "PRECISION"."RAW"."CPI_CONFIG"
+  ;
+[0m21:50:14.480907 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.229 seconds
+[0m21:50:14.481852 [debug] [Thread-4 (]: Using snowflake connection "seed.precision_cagr.leases"
+[0m21:50:14.482504 [debug] [Thread-4 (]: On seed.precision_cagr.leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.leases"} */
+COMMIT
+[0m21:50:14.486268 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.244 seconds
+[0m21:50:14.487191 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.231 seconds
+[0m21:50:14.488005 [debug] [Thread-3 (]: Using snowflake connection "seed.precision_cagr.financials"
+[0m21:50:14.488851 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:50:14.489493 [debug] [Thread-3 (]: On seed.precision_cagr.financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.financials"} */
+COMMIT
+[0m21:50:14.490128 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+COMMIT
+[0m21:50:14.505994 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.264 seconds
+[0m21:50:14.506859 [debug] [Thread-5 (]: Using snowflake connection "seed.precision_cagr.properties"
+[0m21:50:14.507485 [debug] [Thread-5 (]: On seed.precision_cagr.properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.properties"} */
+COMMIT
+[0m21:50:14.764308 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.281 seconds
+[0m21:50:14.780277 [debug] [Thread-4 (]: Using snowflake connection "seed.precision_cagr.leases"
+[0m21:50:14.780932 [debug] [Thread-4 (]: On seed.precision_cagr.leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.leases"} */
+BEGIN
+[0m21:50:14.809720 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.318 seconds
+[0m21:50:14.810876 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.303 seconds
+[0m21:50:14.811802 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.321 seconds
+[0m21:50:14.813701 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:50:14.815583 [debug] [Thread-5 (]: Using snowflake connection "seed.precision_cagr.properties"
+[0m21:50:14.817693 [debug] [Thread-3 (]: Using snowflake connection "seed.precision_cagr.financials"
+[0m21:50:14.818368 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+BEGIN
+[0m21:50:14.818927 [debug] [Thread-5 (]: On seed.precision_cagr.properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.properties"} */
+BEGIN
+[0m21:50:14.819447 [debug] [Thread-3 (]: On seed.precision_cagr.financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.financials"} */
+BEGIN
+[0m21:50:14.852348 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.071 seconds
+[0m21:50:14.853525 [debug] [Thread-4 (]: Using snowflake connection "seed.precision_cagr.leases"
+[0m21:50:14.854101 [debug] [Thread-4 (]: On seed.precision_cagr.leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.leases"} */
+insert into PRECISION.RAW.leases (lease_id, property_id, tenant_name, lease_start_date, lease_end_date, monthly_rent, annual_escalation_pct, projected_end_value) values
+            (%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s)...
+[0m21:50:14.895309 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.074 seconds
+[0m21:50:14.896187 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.076 seconds
+[0m21:50:14.897250 [debug] [Thread-5 (]: Using snowflake connection "seed.precision_cagr.properties"
+[0m21:50:14.898660 [debug] [Thread-3 (]: Using snowflake connection "seed.precision_cagr.financials"
+[0m21:50:14.899239 [debug] [Thread-5 (]: On seed.precision_cagr.properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.properties"} */
+insert into PRECISION.RAW.properties (property_id, property_name, address, property_type, acquisition_date, acquisition_price, current_value) values
+            (%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s)...
+[0m21:50:14.899795 [debug] [Thread-3 (]: On seed.precision_cagr.financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.financials"} */
+insert into PRECISION.RAW.financials (financial_id, property_id, period_date, noi, capital_expenditures, distributions) values
+            (%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,...
+[0m21:50:14.912227 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.092 seconds
+[0m21:50:14.913184 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:50:14.913732 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+insert into PRECISION.RAW.cpi_config (config_key, default_value, override_value, override_until_date) values
+            (%s,%s,%s,%s)...
+[0m21:50:15.187499 [debug] [Thread-4 (]: SQL status: SUCCESS 5 in 0.333 seconds
+[0m21:50:15.188408 [debug] [Thread-4 (]: Using snowflake connection "seed.precision_cagr.leases"
+[0m21:50:15.189013 [debug] [Thread-4 (]: On seed.precision_cagr.leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.leases"} */
+COMMIT
+[0m21:50:15.235924 [debug] [Thread-5 (]: SQL status: SUCCESS 5 in 0.335 seconds
+[0m21:50:15.236744 [debug] [Thread-5 (]: Using snowflake connection "seed.precision_cagr.properties"
+[0m21:50:15.237301 [debug] [Thread-5 (]: On seed.precision_cagr.properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.properties"} */
+COMMIT
+[0m21:50:15.266072 [debug] [Thread-3 (]: SQL status: SUCCESS 20 in 0.365 seconds
+[0m21:50:15.266897 [debug] [Thread-3 (]: Using snowflake connection "seed.precision_cagr.financials"
+[0m21:50:15.267474 [debug] [Thread-3 (]: On seed.precision_cagr.financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.financials"} */
+COMMIT
+[0m21:50:15.293557 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.379 seconds
+[0m21:50:15.294378 [debug] [Thread-2 (]: Using snowflake connection "seed.precision_cagr.cpi_config"
+[0m21:50:15.294936 [debug] [Thread-2 (]: On seed.precision_cagr.cpi_config: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "seed.precision_cagr.cpi_config"} */
+COMMIT
+[0m21:50:15.698555 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.509 seconds
+[0m21:50:15.705109 [debug] [Thread-4 (]: Writing runtime SQL for node "seed.precision_cagr.leases"
+[0m21:50:15.730696 [info ] [Thread-4 (]: 3 of 4 OK loaded seed file RAW.leases .......................................... [[32mINSERT 5[0m in 1.99s]
+[0m21:50:15.731597 [debug] [Thread-4 (]: Finished running node seed.precision_cagr.leases
+[0m21:50:15.745446 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.477 seconds
+[0m21:50:15.746279 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.451 seconds
+[0m21:50:15.747230 [debug] [Thread-3 (]: Writing runtime SQL for node "seed.precision_cagr.financials"
+[0m21:50:15.748045 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.precision_cagr.cpi_config"
+[0m21:50:15.751186 [info ] [Thread-3 (]: 2 of 4 OK loaded seed file RAW.financials ...................................... [[32mINSERT 20[0m in 2.02s]
+[0m21:50:15.753904 [info ] [Thread-2 (]: 1 of 4 OK loaded seed file RAW.cpi_config ...................................... [[32mINSERT 1[0m in 2.02s]
+[0m21:50:15.754766 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.517 seconds
+[0m21:50:15.755494 [debug] [Thread-3 (]: Finished running node seed.precision_cagr.financials
+[0m21:50:15.756209 [debug] [Thread-2 (]: Finished running node seed.precision_cagr.cpi_config
+[0m21:50:15.757050 [debug] [Thread-5 (]: Writing runtime SQL for node "seed.precision_cagr.properties"
+[0m21:50:15.760417 [info ] [Thread-5 (]: 4 of 4 OK loaded seed file RAW.properties ...................................... [[32mINSERT 5[0m in 2.02s]
+[0m21:50:15.761183 [debug] [Thread-5 (]: Finished running node seed.precision_cagr.properties
+[0m21:50:15.764464 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m21:50:15.765174 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.leases' was properly closed.
+[0m21:50:15.765683 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.cpi_config' was properly closed.
+[0m21:50:15.766133 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.financials' was properly closed.
+[0m21:50:15.766572 [debug] [Dummy-1   ]: Connection 'seed.precision_cagr.properties' was properly closed.
+[0m21:50:15.767199 [info ] [Dummy-1   ]: 
+[0m21:50:15.767701 [info ] [Dummy-1   ]: Finished running 7 project hooks, 4 seeds in 0 hours 0 minutes and 4.83 seconds (4.83s).
+[0m21:50:15.769704 [debug] [Dummy-1   ]: Command end result
+[0m21:50:15.793883 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:50:15.795874 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:50:15.802829 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m21:50:15.803358 [info ] [Dummy-1   ]: 
+[0m21:50:15.803950 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m21:50:15.804427 [info ] [Dummy-1   ]: 
+[0m21:50:15.804925 [info ] [Dummy-1   ]: Done. PASS=11 WARN=0 ERROR=0 SKIP=0 TOTAL=11
+[0m21:50:15.806676 [debug] [Dummy-1   ]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 6.399431, "process_in_blocks": "0", "process_kernel_time": 1.0, "process_mem_max_rss": "458156", "process_out_blocks": "0", "process_user_time": 4.51}
+[0m21:50:15.807336 [debug] [Dummy-1   ]: Command `cli seed` succeeded at 21:50:15.807060 after 6.40 seconds
+[0m21:50:15.807877 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 21:51:07.049647 | 1dba3f62-675c-49b9-9a89-994998bfa320 ==============================
+[0m21:51:07.049647 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m21:51:07.050630 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/tmp/dbt/', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt ', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m21:51:07.352675 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m21:51:07.930146 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m21:51:08.166290 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m21:51:08.167026 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m21:51:08.423535 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:51:08.425669 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:51:08.470968 [info ] [Dummy-1   ]: Found 5 models, 1 test, 4 seeds, 7 operations, 3 sources, 476 macros
+[0m21:51:08.473559 [info ] [Dummy-1   ]: 
+[0m21:51:08.474202 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m21:51:08.474709 [info ] [Dummy-1   ]: 
+[0m21:51:08.475502 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m21:51:08.481797 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION'
+[0m21:51:08.483135 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION'
+[0m21:51:08.592445 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION"
+[0m21:51:08.593211 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION"
+[0m21:51:08.593960 [debug] [ThreadPool]: On list_PRECISION: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION"} */
+show terse schemas in database PRECISION
+    limit 10000
+[0m21:51:08.594722 [debug] [ThreadPool]: On list_PRECISION: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION"} */
+show terse schemas in database PRECISION
+    limit 10000
+[0m21:51:08.595293 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:51:08.595804 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:51:09.092453 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.496 seconds
+[0m21:51:09.093309 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 0.498 seconds
+[0m21:51:09.099344 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRECISION_ODS'
+[0m21:51:09.100342 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_PRECISION, now list_PRECISION_RAW)
+[0m21:51:09.101432 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_PRECISION, now list_PRECISION_FINANCE_CURATED)
+[0m21:51:09.115271 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ODS"
+[0m21:51:09.119379 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_RAW"
+[0m21:51:09.124575 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_FINANCE_CURATED"
+[0m21:51:09.125173 [debug] [ThreadPool]: On list_PRECISION_ODS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ODS"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:51:09.125678 [debug] [ThreadPool]: On list_PRECISION_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_RAW"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:51:09.126164 [debug] [ThreadPool]: On list_PRECISION_FINANCE_CURATED: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_FINANCE_CURATED"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m21:51:09.126645 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:51:09.127106 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:51:09.127532 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:51:09.581707 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.454 seconds
+[0m21:51:09.586394 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_FINANCE_CURATED"
+[0m21:51:09.586986 [debug] [ThreadPool]: On list_PRECISION_FINANCE_CURATED: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_FINANCE_CURATED"} */
+show objects in PRECISION.FINANCE_CURATED
+    limit 10000
+    
+;
+[0m21:51:09.604690 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.478 seconds
+[0m21:51:09.605426 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.478 seconds
+[0m21:51:09.607697 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ODS"
+[0m21:51:09.609597 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_RAW"
+[0m21:51:09.610123 [debug] [ThreadPool]: On list_PRECISION_ODS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ODS"} */
+show objects in PRECISION.ODS
+    limit 10000
+    
+;
+[0m21:51:09.610601 [debug] [ThreadPool]: On list_PRECISION_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_RAW"} */
+show objects in PRECISION.RAW
+    limit 10000
+    
+;
+[0m21:51:09.693592 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.106 seconds
+[0m21:51:09.695610 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_FINANCE_CURATED"
+[0m21:51:09.696102 [debug] [ThreadPool]: On list_PRECISION_FINANCE_CURATED: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_FINANCE_CURATED"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:51:09.736058 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.125 seconds
+[0m21:51:09.738005 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_ODS"
+[0m21:51:09.738625 [debug] [ThreadPool]: On list_PRECISION_ODS: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_ODS"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:51:09.768699 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.157 seconds
+[0m21:51:09.770893 [debug] [ThreadPool]: Using snowflake connection "list_PRECISION_RAW"
+[0m21:51:09.771435 [debug] [ThreadPool]: On list_PRECISION_RAW: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "list_PRECISION_RAW"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m21:51:09.789167 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.092 seconds
+[0m21:51:09.822880 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.084 seconds
+[0m21:51:09.850972 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.079 seconds
+[0m21:51:09.864104 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-0"
+[0m21:51:09.870388 [info ] [Dummy-1   ]: 1 of 7 START hook: precision_cagr.on-run-start.0 ............................... [RUN]
+[0m21:51:09.871627 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:51:09.872187 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+-- Drop old views from PRECISION.ANALYTICS (staging models used to land here)
+  DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_ECONOMICS;
+[0m21:51:09.872683 [debug] [Dummy-1   ]: Opening a new connection, currently in state init
+[0m21:51:10.324414 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.452 seconds
+[0m21:51:10.325144 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:51:10.325690 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_FINANCIALS;
+[0m21:51:10.458909 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.132 seconds
+[0m21:51:10.459668 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:51:10.460233 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_LEASES;
+[0m21:51:10.547853 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.087 seconds
+[0m21:51:10.548608 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:51:10.549109 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.STG_PROPERTIES;
+[0m21:51:10.604119 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.054 seconds
+[0m21:51:10.604832 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:51:10.605345 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+DROP VIEW IF EXISTS PRECISION.ANALYTICS.CAGR_METRICS;
+[0m21:51:10.667022 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.061 seconds
+[0m21:51:10.667702 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:51:10.668287 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+-- Drop the old ANALYTICS_RAW schema and all its objects in one step
+  DROP SCHEMA IF EXISTS PRECISION.ANALYTICS_RAW CASCADE;
+[0m21:51:10.735805 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.067 seconds
+[0m21:51:10.737197 [info ] [Dummy-1   ]: 1 of 7 OK hook: precision_cagr.on-run-start.0 .................................. [[32mOK[0m in 0.88s]
+[0m21:51:10.740965 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-1"
+[0m21:51:10.741940 [info ] [Dummy-1   ]: 2 of 7 START hook: precision_cagr.on-run-start.1 ............................... [RUN]
+[0m21:51:10.742740 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:51:10.743369 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS PRECISION.RAW
+[0m21:51:10.800361 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.056 seconds
+[0m21:51:10.801718 [info ] [Dummy-1   ]: 2 of 7 OK hook: precision_cagr.on-run-start.1 .................................. [[32mOK[0m in 0.06s]
+[0m21:51:10.805228 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-2"
+[0m21:51:10.806176 [info ] [Dummy-1   ]: 3 of 7 START hook: precision_cagr.on-run-start.2 ............................... [RUN]
+[0m21:51:10.806931 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:51:10.807430 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS PRECISION.ODS
+[0m21:51:10.855968 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.048 seconds
+[0m21:51:10.857280 [info ] [Dummy-1   ]: 3 of 7 OK hook: precision_cagr.on-run-start.2 .................................. [[32mOK[0m in 0.05s]
+[0m21:51:10.862267 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-3"
+[0m21:51:10.863269 [info ] [Dummy-1   ]: 4 of 7 START hook: precision_cagr.on-run-start.3 ............................... [RUN]
+[0m21:51:10.864034 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:51:10.864537 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS PRECISION.ANALYTICS
+[0m21:51:10.928213 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.063 seconds
+[0m21:51:10.929594 [info ] [Dummy-1   ]: 4 of 7 OK hook: precision_cagr.on-run-start.3 .................................. [[32mOK[0m in 0.07s]
+[0m21:51:10.933094 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-4"
+[0m21:51:10.933995 [info ] [Dummy-1   ]: 5 of 7 START hook: precision_cagr.on-run-start.4 ............................... [RUN]
+[0m21:51:10.934791 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:51:10.935276 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE SCHEMA IF NOT EXISTS PRECISION.FINANCE_CURATED
+[0m21:51:11.003136 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.067 seconds
+[0m21:51:11.004458 [info ] [Dummy-1   ]: 5 of 7 OK hook: precision_cagr.on-run-start.4 .................................. [[32mOK[0m in 0.07s]
+[0m21:51:11.008018 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-5"
+[0m21:51:11.009082 [info ] [Dummy-1   ]: 6 of 7 START hook: precision_cagr.on-run-start.5 ............................... [RUN]
+[0m21:51:11.009963 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:51:11.010476 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE TABLE IF NOT EXISTS PRECISION.RAW.CPI_CONFIG (config_key VARCHAR, default_value VARCHAR, override_value VARCHAR, override_until_date DATE)
+[0m21:51:11.127892 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.117 seconds
+[0m21:51:11.129376 [info ] [Dummy-1   ]: 6 of 7 OK hook: precision_cagr.on-run-start.5 .................................. [[32mOK[0m in 0.12s]
+[0m21:51:11.132929 [debug] [Dummy-1   ]: Writing injected SQL for node "operation.precision_cagr.precision_cagr-on-run-start-6"
+[0m21:51:11.133954 [info ] [Dummy-1   ]: 7 of 7 START hook: precision_cagr.on-run-start.6 ............................... [RUN]
+[0m21:51:11.134927 [debug] [Dummy-1   ]: Using snowflake connection "master"
+[0m21:51:11.135485 [debug] [Dummy-1   ]: On master: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "connection_name": "master"} */
+CREATE OR REPLACE FUNCTION PRECISION.RAW.GET_CPI_CONFIG(p_config_key VARCHAR) RETURNS FLOAT LANGUAGE SQL AS $$
+  SELECT
+    CASE
+      WHEN override_value IS NOT NULL AND override_until_date >= CURRENT_DATE()
+        THEN override_value::FLOAT
+      ELSE default_value::FLOAT
+    END
+  FROM PRECISION.RAW.CPI_CONFIG
+  WHERE config_key = p_config_key
+  LIMIT 1
+$$
+[0m21:51:11.283065 [debug] [Dummy-1   ]: SQL status: SUCCESS 1 in 0.147 seconds
+[0m21:51:11.284390 [info ] [Dummy-1   ]: 7 of 7 OK hook: precision_cagr.on-run-start.6 .................................. [[32mOK[0m in 0.15s]
+[0m21:51:11.284969 [info ] [Dummy-1   ]: 
+[0m21:51:11.289649 [debug] [Thread-2 (]: Began running node model.precision_cagr.stg_economics
+[0m21:51:11.290265 [debug] [Thread-3 (]: Began running node model.precision_cagr.stg_financials
+[0m21:51:11.291120 [debug] [Thread-4 (]: Began running node model.precision_cagr.stg_leases
+[0m21:51:11.291709 [debug] [Thread-5 (]: Began running node model.precision_cagr.stg_properties
+[0m21:51:11.292440 [info ] [Thread-2 (]: 1 of 5 START sql view model ODS.stg_economics .................................. [RUN]
+[0m21:51:11.293186 [info ] [Thread-3 (]: 2 of 5 START sql view model ODS.stg_financials ................................. [RUN]
+[0m21:51:11.293897 [info ] [Thread-4 (]: 3 of 5 START sql view model ODS.stg_leases ..................................... [RUN]
+[0m21:51:11.294618 [info ] [Thread-5 (]: 4 of 5 START sql view model ODS.stg_properties ................................. [RUN]
+[0m21:51:11.295372 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_PRECISION_RAW, now model.precision_cagr.stg_economics)
+[0m21:51:11.295995 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_PRECISION_ODS, now model.precision_cagr.stg_financials)
+[0m21:51:11.296586 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly list_PRECISION_FINANCE_CURATED, now model.precision_cagr.stg_leases)
+[0m21:51:11.297244 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.precision_cagr.stg_properties'
+[0m21:51:11.297772 [debug] [Thread-2 (]: Began compiling node model.precision_cagr.stg_economics
+[0m21:51:11.298363 [debug] [Thread-3 (]: Began compiling node model.precision_cagr.stg_financials
+[0m21:51:11.298892 [debug] [Thread-4 (]: Began compiling node model.precision_cagr.stg_leases
+[0m21:51:11.299358 [debug] [Thread-5 (]: Began compiling node model.precision_cagr.stg_properties
+[0m21:51:11.303044 [debug] [Thread-2 (]: Writing injected SQL for node "model.precision_cagr.stg_economics"
+[0m21:51:11.309049 [debug] [Thread-3 (]: Writing injected SQL for node "model.precision_cagr.stg_financials"
+[0m21:51:11.313861 [debug] [Thread-4 (]: Writing injected SQL for node "model.precision_cagr.stg_leases"
+[0m21:51:11.318400 [debug] [Thread-5 (]: Writing injected SQL for node "model.precision_cagr.stg_properties"
+[0m21:51:11.319593 [debug] [Thread-2 (]: Began executing node model.precision_cagr.stg_economics
+[0m21:51:11.320297 [debug] [Thread-3 (]: Began executing node model.precision_cagr.stg_financials
+[0m21:51:11.321131 [debug] [Thread-4 (]: Began executing node model.precision_cagr.stg_leases
+[0m21:51:11.338548 [debug] [Thread-5 (]: Began executing node model.precision_cagr.stg_properties
+[0m21:51:11.362675 [debug] [Thread-2 (]: Writing runtime sql for node "model.precision_cagr.stg_economics"
+[0m21:51:11.368150 [debug] [Thread-3 (]: Writing runtime sql for node "model.precision_cagr.stg_financials"
+[0m21:51:11.372385 [debug] [Thread-4 (]: Writing runtime sql for node "model.precision_cagr.stg_leases"
+[0m21:51:11.376335 [debug] [Thread-5 (]: Writing runtime sql for node "model.precision_cagr.stg_properties"
+[0m21:51:11.377823 [debug] [Thread-2 (]: Using snowflake connection "model.precision_cagr.stg_economics"
+[0m21:51:11.379541 [debug] [Thread-3 (]: Using snowflake connection "model.precision_cagr.stg_financials"
+[0m21:51:11.380924 [debug] [Thread-4 (]: Using snowflake connection "model.precision_cagr.stg_leases"
+[0m21:51:11.381620 [debug] [Thread-2 (]: On model.precision_cagr.stg_economics: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "model.precision_cagr.stg_economics"} */
+create or replace   view PRECISION.ODS.stg_economics
+  
+   as (
+    -- Staging model for CPI CAGR using GET_CPI_CONFIG UDF
+-- Co-authored with CoCo
+
+SELECT
+    PRECISION.RAW.GET_CPI_CONFIG('cpi_cagr') AS cpi_cagr
+  );
+[0m21:51:11.382737 [debug] [Thread-5 (]: Using snowflake connection "model.precision_cagr.stg_properties"
+[0m21:51:11.383323 [debug] [Thread-3 (]: On model.precision_cagr.stg_financials: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "model.precision_cagr.stg_financials"} */
+create or replace   view PRECISION.ODS.stg_financials
+  
+   as (
+    -- Staging model for financials seed data with aggregations per property
+-- Co-authored with CoCo
+
+SELECT
+    property_id,
+    MIN(period_date::DATE) AS first_period,
+    MAX(period_date::DATE) AS last_period,
+    SUM(noi) AS total_noi,
+    SUM(capital_expenditures) AS total_capex,
+    SUM(distributions) AS total_distributions,
+    MIN(noi) AS first_noi,
+    MAX(noi) AS latest_noi,
+    DATEDIFF('day', MIN(period_date::DATE), MAX(period_date::DATE)) / 365.25 AS financial_years_span
+FROM PRECISION.RAW.financials
+GROUP BY property_id
+  );
+[0m21:51:11.383939 [debug] [Thread-4 (]: On model.precision_cagr.stg_leases: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "model.precision_cagr.stg_leases"} */
+create or replace   view PRECISION.ODS.stg_leases
+  
+   as (
+    -- Staging model for leases seed data
+-- Co-authored with CoCo
+
+SELECT
+    lease_id,
+    property_id,
+    tenant_name,
+    lease_start_date::DATE AS lease_start_date,
+    lease_end_date::DATE AS lease_end_date,
+    monthly_rent,
+    annual_escalation_pct,
+    projected_end_value,
+    DATEDIFF('day', lease_start_date::DATE, lease_end_date::DATE) / 365.25 AS total_lease_years,
+    DATEDIFF('day', CURRENT_DATE(), lease_end_date::DATE) / 365.25 AS years_remaining
+FROM PRECISION.RAW.leases
+  );
+[0m21:51:11.384515 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:51:11.385088 [debug] [Thread-5 (]: On model.precision_cagr.stg_properties: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "model.precision_cagr.stg_properties"} */
+create or replace   view PRECISION.ODS.stg_properties
+  
+   as (
+    -- Staging model for properties seed data
+-- Co-authored with CoCo
+
+SELECT
+    property_id,
+    property_name,
+    address,
+    property_type,
+    acquisition_date::DATE AS acquisition_date,
+    acquisition_price,
+    current_value,
+    DATEDIFF('day', acquisition_date::DATE, CURRENT_DATE()) / 365.25 AS years_elapsed
+FROM PRECISION.RAW.properties
+  );
+[0m21:51:11.385630 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m21:51:11.386083 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m21:51:11.386796 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m21:51:12.096530 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.712 seconds
+[0m21:51:12.121682 [info ] [Thread-2 (]: 1 of 5 OK created sql view model ODS.stg_economics ............................. [[32mSUCCESS 1[0m in 0.82s]
+[0m21:51:12.122565 [debug] [Thread-2 (]: Finished running node model.precision_cagr.stg_economics
+[0m21:51:12.128328 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.742 seconds
+[0m21:51:12.131175 [info ] [Thread-3 (]: 2 of 5 OK created sql view model ODS.stg_financials ............................ [[32mSUCCESS 1[0m in 0.83s]
+[0m21:51:12.131954 [debug] [Thread-3 (]: Finished running node model.precision_cagr.stg_financials
+[0m21:51:12.139883 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.754 seconds
+[0m21:51:12.143161 [info ] [Thread-4 (]: 3 of 5 OK created sql view model ODS.stg_leases ................................ [[32mSUCCESS 1[0m in 0.85s]
+[0m21:51:12.143974 [debug] [Thread-4 (]: Finished running node model.precision_cagr.stg_leases
+[0m21:51:12.151457 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 0.765 seconds
+[0m21:51:12.154330 [info ] [Thread-5 (]: 4 of 5 OK created sql view model ODS.stg_properties ............................ [[32mSUCCESS 1[0m in 0.86s]
+[0m21:51:12.155173 [debug] [Thread-5 (]: Finished running node model.precision_cagr.stg_properties
+[0m21:51:12.156485 [debug] [Thread-2 (]: Began running node model.precision_cagr.cagr_metrics
+[0m21:51:12.157346 [info ] [Thread-2 (]: 5 of 5 START sql view model FINANCE_CURATED.cagr_metrics ....................... [RUN]
+[0m21:51:12.158026 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.precision_cagr.stg_economics, now model.precision_cagr.cagr_metrics)
+[0m21:51:12.158666 [debug] [Thread-2 (]: Began compiling node model.precision_cagr.cagr_metrics
+[0m21:51:12.164369 [debug] [Thread-2 (]: Writing injected SQL for node "model.precision_cagr.cagr_metrics"
+[0m21:51:12.165183 [debug] [Thread-2 (]: Began executing node model.precision_cagr.cagr_metrics
+[0m21:51:12.171164 [debug] [Thread-2 (]: Writing runtime sql for node "model.precision_cagr.cagr_metrics"
+[0m21:51:12.174509 [debug] [Thread-2 (]: Using snowflake connection "model.precision_cagr.cagr_metrics"
+[0m21:51:12.175297 [debug] [Thread-2 (]: On model.precision_cagr.cagr_metrics: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "precision_cagr", "target_name": "dev", "node_id": "model.precision_cagr.cagr_metrics"} */
+create or replace   view PRECISION.FINANCE_CURATED.cagr_metrics
+  
+   as (
+    -- CAGR metrics mart combining properties, leases, and financials
+-- Co-authored with CoCo
+
+WITH props AS (
+    SELECT * FROM PRECISION.ODS.stg_properties
+),
+
+leases AS (
+    SELECT * FROM PRECISION.ODS.stg_leases
+),
+
+fins AS (
+    SELECT * FROM PRECISION.ODS.stg_financials
+),
+
+econ AS (
+    SELECT cpi_cagr FROM PRECISION.ODS.stg_economics
+)
+
+SELECT
+    p.property_id,
+    p.property_name,
+    p.property_type,
+    p.acquisition_date,
+    p.acquisition_price,
+    p.current_value,
+    l.lease_start_date,
+    l.lease_end_date,
+    l.projected_end_value,
+    l.tenant_name,
+
+    -- Years calculations
+    p.years_elapsed,
+    l.years_remaining,
+    l.total_lease_years,
+
+    -- METRIC 1: Current CAGR (acquisition to today)
+    CASE WHEN p.years_elapsed > 0
+        THEN POWER(p.current_value / NULLIF(p.acquisition_price, 0), 1.0 / p.years_elapsed) - 1
+        ELSE NULL
+    END AS current_cagr,
+
+    -- METRIC 2: Remaining Lease CAGR (today to lease end)
+    CASE WHEN l.years_remaining > 0
+        THEN POWER(l.projected_end_value / NULLIF(p.current_value, 0), 1.0 / l.years_remaining) - 1
+        ELSE NULL
+    END AS remaining_lease_cagr,
+
+    -- METRIC 3: Full Lifetime CAGR (acquisition to lease end)
+    CASE WHEN l.total_lease_years > 0
+        THEN POWER(l.projected_end_value / NULLIF(p.acquisition_price, 0), 1.0 / l.total_lease_years) - 1
+        ELSE NULL
+    END AS full_lifetime_cagr,
+
+    -- METRIC 4: Total Return CAGR (includes distributions and capex)
+    CASE WHEN p.years_elapsed > 0
+        THEN POWER(
+            (p.current_value + COALESCE(f.total_distributions, 0) - COALESCE(f.total_capex, 0))
+            / NULLIF(p.acquisition_price, 0),
+            1.0 / p.years_elapsed
+        ) - 1
+        ELSE NULL
+    END AS total_return_cagr,
+
+    -- METRIC 5: NOI Growth CAGR
+    CASE WHEN f.financial_years_span > 0 AND f.first_noi > 0
+        THEN POWER(f.latest_noi / f.first_noi, 1.0 / f.financial_years_span) - 1
+        ELSE NULL
+    END AS noi_growth_cagr,
+
+    -- METRIC 6: Real CAGR (inflation-adjusted)
+    CASE WHEN p.years_elapsed > 0 AND e.cpi_cagr IS NOT NULL
+        THEN (
+            (1 + (POWER(p.current_value / NULLIF(p.acquisition_price, 0), 1.0 / p.years_elapsed) - 1))
+            / (1 + e.cpi_cagr)
+        ) - 1
+        ELSE NULL
+    END AS real_cagr,
+
+    -- METRIC 7: Spread vs Treasury (placeholder — uses CPI as proxy until FRED rates loaded)
+    CASE WHEN p.years_elapsed > 0
+        THEN (POWER(p.current_value / NULLIF(p.acquisition_price, 0), 1.0 / p.years_elapsed) - 1) - COALESCE(e.cpi_cagr, 0)
+        ELSE NULL
+    END AS spread_vs_benchmark
+
+FROM props p
+LEFT JOIN leases l ON p.property_id = l.property_id
+LEFT JOIN fins f ON p.property_id = f.property_id
+CROSS JOIN econ e
+  );
+[0m21:51:12.175935 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m21:51:13.239491 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.063 seconds
+[0m21:51:13.242726 [info ] [Thread-2 (]: 5 of 5 OK created sql view model FINANCE_CURATED.cagr_metrics .................. [[32mSUCCESS 1[0m in 1.08s]
+[0m21:51:13.243576 [debug] [Thread-2 (]: Finished running node model.precision_cagr.cagr_metrics
+[0m21:51:13.247293 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m21:51:13.248041 [debug] [Dummy-1   ]: Connection 'model.precision_cagr.stg_leases' was properly closed.
+[0m21:51:13.248619 [debug] [Dummy-1   ]: Connection 'model.precision_cagr.cagr_metrics' was properly closed.
+[0m21:51:13.249046 [debug] [Dummy-1   ]: Connection 'model.precision_cagr.stg_financials' was properly closed.
+[0m21:51:13.249449 [debug] [Dummy-1   ]: Connection 'model.precision_cagr.stg_properties' was properly closed.
+[0m21:51:13.250057 [info ] [Dummy-1   ]: 
+[0m21:51:13.250590 [info ] [Dummy-1   ]: Finished running 7 project hooks, 5 view models in 0 hours 0 minutes and 4.77 seconds (4.77s).
+[0m21:51:13.252661 [debug] [Dummy-1   ]: Command end result
+[0m21:51:13.278169 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m21:51:13.280230 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m21:51:13.286963 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m21:51:13.287474 [info ] [Dummy-1   ]: 
+[0m21:51:13.288063 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m21:51:13.288641 [info ] [Dummy-1   ]: 
+[0m21:51:13.289130 [info ] [Dummy-1   ]: Done. PASS=12 WARN=0 ERROR=0 SKIP=0 TOTAL=12
+[0m21:51:13.290893 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.3190565, "process_in_blocks": "0", "process_kernel_time": 0.95, "process_mem_max_rss": "455980", "process_out_blocks": "0", "process_user_time": 4.55}
+[0m21:51:13.291546 [debug] [Dummy-1   ]: Command `cli run` succeeded at 21:51:13.291285 after 6.32 seconds
+[0m21:51:13.292083 [debug] [Dummy-1   ]: Flushing usage events
