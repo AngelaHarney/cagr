@@ -2322,3 +2322,15 @@ CROSS JOIN econ e
 [0m21:51:13.290893 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.3190565, "process_in_blocks": "0", "process_kernel_time": 0.95, "process_mem_max_rss": "455980", "process_out_blocks": "0", "process_user_time": 4.55}
 [0m21:51:13.291546 [debug] [Dummy-1   ]: Command `cli run` succeeded at 21:51:13.291285 after 6.32 seconds
 [0m21:51:13.292083 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 00:46:17.728822 | fbd0a176-ceca-40cc-a3c0-fbf1acfb4dce ==============================
+[0m00:46:17.728822 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m00:46:17.729647 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': '/tmp/dbt/target/', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m00:46:17.792154 [error] [Dummy-1   ]: Encountered an error:
+Compilation Error
+  Could not render {{ var('db_name') }}: Required var 'db_name' not found in config:
+  Vars supplied to <Configuration> = {}
+[0m00:46:17.793755 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.13649268, "process_in_blocks": "0", "process_kernel_time": 0.46, "process_mem_max_rss": "390996", "process_out_blocks": "0", "process_user_time": 2.79}
+[0m00:46:17.794395 [debug] [Dummy-1   ]: Command `cli run` failed at 00:46:17.794131 after 0.14 seconds
+[0m00:46:17.794913 [debug] [Dummy-1   ]: Flushing usage events
