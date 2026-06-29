@@ -2,20 +2,9 @@
 -- Co-authored with CoCo
 
 -- ============================================================
--- Pass -D "env=DEV" or -D "env=TST" or -D "env=PRD"
--- PRD has no suffix, others append _<env> to PRECISION
+-- env_suffix and wh_size come from templating_config in manifest.yml
+-- Deploy with: snow dcm deploy --target DEV|TST|PRD -c default
 -- ============================================================
-
-{% if env == "PRD" %}
-  {% set env_suffix = "" %}
-  {% set wh_size = "XSMALL" %}
-{% elif env == "TST" %}
-  {% set env_suffix = "_TST" %}
-  {% set wh_size = "XSMALL" %}
-{% else %}
-  {% set env_suffix = "_DEV" %}
-  {% set wh_size = "XSMALL" %}
-{% endif %}
 
 -- Database
 DEFINE DATABASE PRECISION{{env_suffix}}

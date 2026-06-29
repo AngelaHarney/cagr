@@ -1,6 +1,5 @@
 manifest_version: 2
 type: DCM_PROJECT
-default_target: 'DEV'
 
 targets:
   DEV:
@@ -14,20 +13,13 @@ targets:
     templating_config: 'PRD'
 
 templating:
-  defaults:
-    env_suffix: "_DEV"
-    db_name: "PRECISION_DEV"
-    wh_size: "XSMALL"
   configurations:
     DEV:
       env_suffix: "_DEV"
-      db_name: "PRECISION_DEV"
       wh_size: "XSMALL"
     TST:
       env_suffix: "_TST"
-      db_name: "PRECISION_TST"
-      wh_size: "SMALL"
+      wh_size: "XSMALL"
     PRD:
       env_suffix: ""
-      db_name: "PRECISION"
-      wh_size: "MEDIUM"
+      wh_size: "XSMALL"
