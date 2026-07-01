@@ -1,20 +1,20 @@
--- CAGR metrics mart combining properties, leases, and financials
+-- CAGR metrics mart combining properties, leases, and financials (SELECT-only; DDL managed by DCM)
 -- Co-authored with CoCo
 
 WITH props AS (
-    SELECT * FROM {{ ref('stg_properties') }}
+    SELECT * FROM {{ get_db_name() }}.ODS.STG_PROPERTIES
 ),
 
 leases AS (
-    SELECT * FROM {{ ref('stg_leases') }}
+    SELECT * FROM {{ get_db_name() }}.ODS.STG_LEASES
 ),
 
 fins AS (
-    SELECT * FROM {{ ref('stg_financials') }}
+    SELECT * FROM {{ get_db_name() }}.ODS.STG_FINANCIALS
 ),
 
 econ AS (
-    SELECT cpi_cagr FROM {{ ref('stg_economics') }}
+    SELECT cpi_cagr FROM {{ get_db_name() }}.ODS.STG_ECONOMICS
 )
 
 SELECT

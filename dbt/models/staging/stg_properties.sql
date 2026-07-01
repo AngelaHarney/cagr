@@ -1,4 +1,4 @@
--- Staging model for properties seed data
+-- Staging model for properties seed data (SELECT-only; DDL managed by DCM)
 -- Co-authored with CoCo
 
 SELECT
@@ -10,4 +10,4 @@ SELECT
     acquisition_price,
     current_value,
     DATEDIFF('day', acquisition_date::DATE, CURRENT_DATE()) / 365.25 AS years_elapsed
-FROM {{ source('raw', 'properties') }}
+FROM {{ get_db_name() }}.RAW.PROPERTIES

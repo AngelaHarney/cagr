@@ -1,4 +1,4 @@
--- Staging model for CPI CAGR using GET_CPI_CONFIG UDF
+-- Staging model for CPI CAGR using GET_CPI_CONFIG UDF (SELECT-only; DDL managed by DCM)
 -- Co-authored with CoCo
 
 SELECT

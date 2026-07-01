@@ -18,36 +18,9 @@ clean-targets:
 vars:
   env_name: ""
 
-on-run-start:
-  - >
-    CREATE DATABASE IF NOT EXISTS {{ get_db_name() }}
-  - >
-    CREATE SCHEMA IF NOT EXISTS {{ get_db_name() }}.RAW
-  - >
-    CREATE SCHEMA IF NOT EXISTS {{ get_db_name() }}.ODS
-  - >
-    CREATE SCHEMA IF NOT EXISTS {{ get_db_name() }}.ANALYTICS
-  - >
-    CREATE SCHEMA IF NOT EXISTS {{ get_db_name() }}.FINANCE_CURATED
-  - >
-    CREATE TABLE IF NOT EXISTS {{ get_db_name() }}.RAW.CPI_CONFIG
-    (config_key VARCHAR, default_value VARCHAR, override_value VARCHAR, override_until_date DATE)
-  - >
-    CREATE OR REPLACE FUNCTION {{ get_db_name() }}.RAW.GET_CPI_CONFIG(p_config_key VARCHAR)
-    RETURNS FLOAT
-    LANGUAGE SQL
-    AS
-    $$
-      SELECT
-        CASE
-          WHEN override_value IS NOT NULL AND override_until_date >= CURRENT_DATE()
-            THEN override_value::FLOAT
-          ELSE default_value::FLOAT
-        END
-      FROM IDENTIFIER('{{ get_db_name() }}.RAW.CPI_CONFIG')
-      WHERE config_key = p_config_key
-      LIMIT 1
-    $$
+# on-run-start hooks removed: database, schemas, CPI_CONFIG table, and
+# GET_CPI_CONFIG function are now managed declaratively by DCM.
+# See dcm/sources/definitions/infrastructure.sql
 
 seeds:
   precision_cagr:

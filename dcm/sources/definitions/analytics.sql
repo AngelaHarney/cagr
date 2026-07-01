@@ -1,0 +1,158 @@
+-- Dynamic table definitions converting dbt staging and mart models to DCM
+-- Co-authored with CoCo
+
+-- =============================================================================
+-- STAGING DYNAMIC TABLES (ODS schema)
+-- =============================================================================
+
+DEFINE DYNAMIC TABLE PRECISION{{env_suffix}}.ODS.STG_PROPERTIES
+    WAREHOUSE = PRECISION_WH{{env_suffix}}
+    TARGET_LAG = '1 hour'
+    COMMENT = 'Staged properties with computed years_elapsed'
+AS
+SELECT
+    PROPERTY_ID,
+    PROPERTY_NAME,
+    ADDRESS,
+    PROPERTY_TYPE,
+    ACQUISITION_DATE::DATE AS ACQUISITION_DATE,
+    ACQUISITION_PRICE,
+    CURRENT_VALUE,
+    DATEDIFF('day', ACQUISITION_DATE::DATE, CURRENT_DATE()) / 365.25 AS YEARS_ELAPSED
+FROM PRECISION{{env_suffix}}.RAW.PROPERTIES;
+
+DEFINE DYNAMIC TABLE PRECISION{{env_suffix}}.ODS.STG_LEASES
+    WAREHOUSE = PRECISION_WH{{env_suffix}}
+    TARGET_LAG = '1 hour'
+    COMMENT = 'Staged leases with computed durations'
+AS
+SELECT
+    LEASE_ID,
+    PROPERTY_ID,
+    TENANT_NAME,
+    LEASE_START_DATE::DATE AS LEASE_START_DATE,
+    LEASE_END_DATE::DATE AS LEASE_END_DATE,
+    MONTHLY_RENT,
+    ANNUAL_ESCALATION_PCT,
+    PROJECTED_END_VALUE,
+    DATEDIFF('day', LEASE_START_DATE::DATE, LEASE_END_DATE::DATE) / 365.25 AS TOTAL_LEASE_YEARS,
+    DATEDIFF('day', CURRENT_DATE(), LEASE_END_DATE::DATE) / 365.25 AS YEARS_REMAINING
+FROM PRECISION{{env_suffix}}.RAW.LEASES;
+
+DEFINE DYNAMIC TABLE PRECISION{{env_suffix}}.ODS.STG_FINANCIALS
+    WAREHOUSE = PRECISION_WH{{env_suffix}}
+    TARGET_LAG = '1 hour'
+    COMMENT = 'Staged financials aggregated per property'
+AS
+SELECT
+    PROPERTY_ID,
+    MIN(PERIOD_DATE::DATE) AS FIRST_PERIOD,
+    MAX(PERIOD_DATE::DATE) AS LAST_PERIOD,
+    SUM(NOI) AS TOTAL_NOI,
+    SUM(CAPITAL_EXPENDITURES) AS TOTAL_CAPEX,
+    SUM(DISTRIBUTIONS) AS TOTAL_DISTRIBUTIONS,
+    MIN(NOI) AS FIRST_NOI,
+    MAX(NOI) AS LATEST_NOI,
+    DATEDIFF('day', MIN(PERIOD_DATE::DATE), MAX(PERIOD_DATE::DATE)) / 365.25 AS FINANCIAL_YEARS_SPAN
+FROM PRECISION{{env_suffix}}.RAW.FINANCIALS
+GROUP BY PROPERTY_ID;
+
+DEFINE DYNAMIC TABLE PRECISION{{env_suffix}}.ODS.STG_ECONOMICS
+    WAREHOUSE = PRECISION_WH{{env_suffix}}
+    TARGET_LAG = '1 hour'
+    COMMENT = 'CPI CAGR from config table via UDF'
+AS
+SELECT
+    PRECISION{{env_suffix}}.RAW.GET_CPI_CONFIG('cpi_cagr') AS CPI_CAGR;
+
+-- =============================================================================
+-- MART DYNAMIC TABLE (FINANCE_CURATED schema)
+-- =============================================================================
+
+DEFINE DYNAMIC TABLE PRECISION{{env_suffix}}.FINANCE_CURATED.CAGR_METRICS
+    WAREHOUSE = PRECISION_WH{{env_suffix}}
+    TARGET_LAG = '1 hour'
+    COMMENT = 'CAGR metrics mart combining properties, leases, financials, and economics'
+AS
+WITH PROPS AS (
+    SELECT * FROM PRECISION{{env_suffix}}.ODS.STG_PROPERTIES
+),
+LEASES AS (
+    SELECT * FROM PRECISION{{env_suffix}}.ODS.STG_LEASES
+),
+FINS AS (
+    SELECT * FROM PRECISION{{env_suffix}}.ODS.STG_FINANCIALS
+),
+ECON AS (
+    SELECT CPI_CAGR FROM PRECISION{{env_suffix}}.ODS.STG_ECONOMICS
+)
+SELECT
+    P.PROPERTY_ID,
+    P.PROPERTY_NAME,
+    P.PROPERTY_TYPE,
+    P.ACQUISITION_DATE,
+    P.ACQUISITION_PRICE,
+    P.CURRENT_VALUE,
+    L.LEASE_START_DATE,
+    L.LEASE_END_DATE,
+    L.PROJECTED_END_VALUE,
+    L.TENANT_NAME,
+
+    -- Years calculations
+    P.YEARS_ELAPSED,
+    L.YEARS_REMAINING,
+    L.TOTAL_LEASE_YEARS,
+
+    -- METRIC 1: Current CAGR (acquisition to today)
+    CASE WHEN P.YEARS_ELAPSED > 0
+        THEN POWER(P.CURRENT_VALUE / NULLIF(P.ACQUISITION_PRICE, 0), 1.0 / P.YEARS_ELAPSED) - 1
+        ELSE NULL
+    END AS CURRENT_CAGR,
+
+    -- METRIC 2: Remaining Lease CAGR (today to lease end)
+    CASE WHEN L.YEARS_REMAINING > 0
+        THEN POWER(L.PROJECTED_END_VALUE / NULLIF(P.CURRENT_VALUE, 0), 1.0 / L.YEARS_REMAINING) - 1
+        ELSE NULL
+    END AS REMAINING_LEASE_CAGR,
+
+    -- METRIC 3: Full Lifetime CAGR (acquisition to lease end)
+    CASE WHEN L.TOTAL_LEASE_YEARS > 0
+        THEN POWER(L.PROJECTED_END_VALUE / NULLIF(P.ACQUISITION_PRICE, 0), 1.0 / L.TOTAL_LEASE_YEARS) - 1
+        ELSE NULL
+    END AS FULL_LIFETIME_CAGR,
+
+    -- METRIC 4: Total Return CAGR (includes distributions and capex)
+    CASE WHEN P.YEARS_ELAPSED > 0
+        THEN POWER(
+            (P.CURRENT_VALUE + COALESCE(F.TOTAL_DISTRIBUTIONS, 0) - COALESCE(F.TOTAL_CAPEX, 0))
+            / NULLIF(P.ACQUISITION_PRICE, 0),
+            1.0 / P.YEARS_ELAPSED
+        ) - 1
+        ELSE NULL
+    END AS TOTAL_RETURN_CAGR,
+
+    -- METRIC 5: NOI Growth CAGR
+    CASE WHEN F.FINANCIAL_YEARS_SPAN > 0 AND F.FIRST_NOI > 0
+        THEN POWER(F.LATEST_NOI / F.FIRST_NOI, 1.0 / F.FINANCIAL_YEARS_SPAN) - 1
+        ELSE NULL
+    END AS NOI_GROWTH_CAGR,
+
+    -- METRIC 6: Real CAGR (inflation-adjusted)
+    CASE WHEN P.YEARS_ELAPSED > 0 AND E.CPI_CAGR IS NOT NULL
+        THEN (
+            (1 + (POWER(P.CURRENT_VALUE / NULLIF(P.ACQUISITION_PRICE, 0), 1.0 / P.YEARS_ELAPSED) - 1))
+            / (1 + E.CPI_CAGR)
+        ) - 1
+        ELSE NULL
+    END AS REAL_CAGR,
+
+    -- METRIC 7: Spread vs Treasury (uses CPI as proxy until FRED rates loaded)
+    CASE WHEN P.YEARS_ELAPSED > 0
+        THEN (POWER(P.CURRENT_VALUE / NULLIF(P.ACQUISITION_PRICE, 0), 1.0 / P.YEARS_ELAPSED) - 1) - COALESCE(E.CPI_CAGR, 0)
+        ELSE NULL
+    END AS SPREAD_VS_BENCHMARK
+
+FROM PROPS P
+LEFT JOIN LEASES L ON P.PROPERTY_ID = L.PROPERTY_ID
+LEFT JOIN FINS F ON P.PROPERTY_ID = F.PROPERTY_ID
+CROSS JOIN ECON E;
