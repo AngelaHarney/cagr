@@ -3,8 +3,7 @@
 
 -- ============================================================
 -- env_suffix and wh_size come from templating_config in manifest.yml
--- Deploy with: snow dcm plan/deploy <identifier> -c default --target DEV|TST|PRD
--- Bootstrap: run pre_deploy.sql first to create the project container
+-- Deploy with: snow dcm deploy --target DEV|TST|PRD -c default
 -- ============================================================
 
 -- Database
