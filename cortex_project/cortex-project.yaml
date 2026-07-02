@@ -1,0 +1,7 @@
+version: 1
+artifacts:
+  - path: semantic_models/DEAL_SOURCING_CAGR_MODEL.sv.yaml
+    type: semantic_view
+    targets:
+      default:
+        object: PRECISION.FINANCE_CURATED.DEAL_SOURCING_CAGR_MODEL

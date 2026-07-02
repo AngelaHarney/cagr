@@ -1,4 +1,4 @@
--- Staging model for financials seed data with aggregations per property
+-- Staging model for financials seed data (SELECT-only; DDL managed by DCM)
 -- Co-authored with CoCo
 
 SELECT
@@ -11,5 +11,5 @@ SELECT
     MIN(noi) AS first_noi,
     MAX(noi) AS latest_noi,
     DATEDIFF('day', MIN(period_date::DATE), MAX(period_date::DATE)) / 365.25 AS financial_years_span
-FROM PRECISION.RAW.financials
+FROM PRECISION.RAW.FINANCIALS
 GROUP BY property_id

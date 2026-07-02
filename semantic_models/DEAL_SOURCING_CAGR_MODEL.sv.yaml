@@ -1,0 +1,236 @@
+# Semantic model for sale-leaseback deal sourcing CAGR analysis
+# Co-authored with CoCo
+name: DEAL_SOURCING_CAGR_MODEL
+description: "Deal Sourcing Engine semantic model for sale-leaseback investment analysis. Enables business stakeholders to evaluate CAGR metrics (current, remaining lease, and full lifetime) to optimize investment volume and target desired cap rates. Supports deal pipeline decisions by comparing property performance across current growth, projected remaining lease returns, and total lifetime value creation."
+tables:
+  - name: CAGR_METRICS
+    base_table:
+      database: PRECISION
+      schema: FINANCE_CURATED
+      table: CAGR_METRICS
+    primary_key:
+      columns:
+        - PROPERTY_ID
+    dimensions:
+      - name: ACQUISITION_PRICE
+        expr: ACQUISITION_PRICE
+        data_type: "NUMBER(38,0)"
+      - name: CURRENT_VALUE
+        expr: CURRENT_VALUE
+        data_type: "NUMBER(38,0)"
+      - name: PROJECTED_END_VALUE
+        expr: PROJECTED_END_VALUE
+        data_type: "NUMBER(38,0)"
+      - name: PROPERTY_ID
+        expr: PROPERTY_ID
+        data_type: VARCHAR(16777216)
+      - name: PROPERTY_NAME
+        expr: PROPERTY_NAME
+        data_type: VARCHAR(16777216)
+      - name: PROPERTY_TYPE
+        expr: PROPERTY_TYPE
+        data_type: VARCHAR(16777216)
+      - name: TENANT_NAME
+        expr: TENANT_NAME
+        data_type: VARCHAR(16777216)
+    facts:
+      - name: CURRENT_CAGR
+        expr: CURRENT_CAGR
+        data_type: FLOAT
+        access_modifier: public_access
+      - name: FULL_LIFETIME_CAGR
+        expr: FULL_LIFETIME_CAGR
+        data_type: FLOAT
+        access_modifier: public_access
+      - name: NOI_GROWTH_CAGR
+        expr: NOI_GROWTH_CAGR
+        data_type: FLOAT
+        access_modifier: public_access
+      - name: REAL_CAGR
+        expr: REAL_CAGR
+        data_type: FLOAT
+        access_modifier: public_access
+      - name: REMAINING_LEASE_CAGR
+        expr: REMAINING_LEASE_CAGR
+        data_type: FLOAT
+        access_modifier: public_access
+      - name: SPREAD_VS_BENCHMARK
+        expr: SPREAD_VS_BENCHMARK
+        data_type: FLOAT
+        access_modifier: public_access
+      - name: TOTAL_LEASE_YEARS
+        expr: TOTAL_LEASE_YEARS
+        data_type: "NUMBER(17,6)"
+        access_modifier: public_access
+      - name: TOTAL_RETURN_CAGR
+        expr: TOTAL_RETURN_CAGR
+        data_type: FLOAT
+        access_modifier: public_access
+      - name: YEARS_ELAPSED
+        expr: YEARS_ELAPSED
+        data_type: "NUMBER(17,6)"
+        access_modifier: public_access
+      - name: YEARS_REMAINING
+        expr: YEARS_REMAINING
+        data_type: "NUMBER(17,6)"
+        access_modifier: public_access
+    time_dimensions:
+      - name: ACQUISITION_DATE
+        expr: ACQUISITION_DATE
+        data_type: DATE
+      - name: LEASE_END_DATE
+        expr: LEASE_END_DATE
+        data_type: DATE
+      - name: LEASE_START_DATE
+        expr: LEASE_START_DATE
+        data_type: DATE
+  - name: STG_FINANCIALS
+    base_table:
+      database: PRECISION
+      schema: ODS
+      table: STG_FINANCIALS
+    primary_key:
+      columns:
+        - PROPERTY_ID
+    dimensions:
+      - name: FIRST_NOI
+        expr: FIRST_NOI
+        data_type: "NUMBER(38,0)"
+      - name: LATEST_NOI
+        expr: LATEST_NOI
+        data_type: "NUMBER(38,0)"
+      - name: PROPERTY_ID
+        expr: PROPERTY_ID
+        data_type: VARCHAR(16777216)
+      - name: TOTAL_CAPEX
+        expr: TOTAL_CAPEX
+        data_type: "NUMBER(38,0)"
+      - name: TOTAL_DISTRIBUTIONS
+        expr: TOTAL_DISTRIBUTIONS
+        data_type: "NUMBER(38,0)"
+      - name: TOTAL_NOI
+        expr: TOTAL_NOI
+        data_type: "NUMBER(38,0)"
+    facts:
+      - name: FINANCIAL_YEARS_SPAN
+        expr: FINANCIAL_YEARS_SPAN
+        data_type: "NUMBER(17,6)"
+        access_modifier: public_access
+    time_dimensions:
+      - name: FIRST_PERIOD
+        expr: FIRST_PERIOD
+        data_type: DATE
+      - name: LAST_PERIOD
+        expr: LAST_PERIOD
+        data_type: DATE
+  - name: STG_LEASES
+    base_table:
+      database: PRECISION
+      schema: ODS
+      table: STG_LEASES
+    primary_key:
+      columns:
+        - PROPERTY_ID
+    dimensions:
+      - name: LEASE_ID
+        expr: LEASE_ID
+        data_type: VARCHAR(16777216)
+      - name: MONTHLY_RENT
+        expr: MONTHLY_RENT
+        data_type: "NUMBER(38,0)"
+      - name: PROJECTED_END_VALUE
+        expr: PROJECTED_END_VALUE
+        data_type: "NUMBER(38,0)"
+      - name: PROPERTY_ID
+        expr: PROPERTY_ID
+        data_type: VARCHAR(16777216)
+      - name: TENANT_NAME
+        expr: TENANT_NAME
+        data_type: VARCHAR(16777216)
+    facts:
+      - name: ANNUAL_ESCALATION_PCT
+        expr: ANNUAL_ESCALATION_PCT
+        data_type: FLOAT
+        access_modifier: public_access
+      - name: TOTAL_LEASE_YEARS
+        expr: TOTAL_LEASE_YEARS
+        data_type: "NUMBER(17,6)"
+        access_modifier: public_access
+      - name: YEARS_REMAINING
+        expr: YEARS_REMAINING
+        data_type: "NUMBER(17,6)"
+        access_modifier: public_access
+    time_dimensions:
+      - name: LEASE_END_DATE
+        expr: LEASE_END_DATE
+        data_type: DATE
+      - name: LEASE_START_DATE
+        expr: LEASE_START_DATE
+        data_type: DATE
+  - name: STG_PROPERTIES
+    base_table:
+      database: PRECISION
+      schema: ODS
+      table: STG_PROPERTIES
+    primary_key:
+      columns:
+        - PROPERTY_ID
+    dimensions:
+      - name: ACQUISITION_PRICE
+        expr: ACQUISITION_PRICE
+        data_type: "NUMBER(38,0)"
+      - name: ADDRESS
+        expr: ADDRESS
+        data_type: VARCHAR(16777216)
+      - name: CURRENT_VALUE
+        expr: CURRENT_VALUE
+        data_type: "NUMBER(38,0)"
+      - name: PROPERTY_ID
+        expr: PROPERTY_ID
+        data_type: VARCHAR(16777216)
+      - name: PROPERTY_NAME
+        expr: PROPERTY_NAME
+        data_type: VARCHAR(16777216)
+      - name: PROPERTY_TYPE
+        expr: PROPERTY_TYPE
+        data_type: VARCHAR(16777216)
+    facts:
+      - name: YEARS_ELAPSED
+        expr: YEARS_ELAPSED
+        data_type: "NUMBER(17,6)"
+        access_modifier: public_access
+    time_dimensions:
+      - name: ACQUISITION_DATE
+        expr: ACQUISITION_DATE
+        data_type: DATE
+verified_queries:
+  - name: "sale_leaseback_above_6pct_cagr"
+    sql: "SELECT PROPERTY_NAME, PROPERTY_TYPE, CURRENT_CAGR, REMAINING_LEASE_CAGR, FULL_LIFETIME_CAGR, ACQUISITION_PRICE, CURRENT_VALUE FROM cagr_metrics WHERE FULL_LIFETIME_CAGR > 0.06 ORDER BY FULL_LIFETIME_CAGR DESC"
+    question: Which sale-leaseback properties exceed a 6% full lifetime CAGR target cap rate?
+    verified_at: 1782952251
+    verified_by: Semantic Model Generator
+    use_as_onboarding_question: false
+  - name: "remaining_cagr_deal_sourcing"
+    sql: "SELECT PROPERTY_NAME, TENANT_NAME, REMAINING_LEASE_CAGR, YEARS_REMAINING, PROJECTED_END_VALUE FROM cagr_metrics WHERE REMAINING_LEASE_CAGR > 0.05 AND YEARS_REMAINING > 5 ORDER BY REMAINING_LEASE_CAGR DESC"
+    question: What properties have remaining CAGR above 5% with more than 5 years left on the lease for deal sourcing?
+    verified_at: 1782952251
+    verified_by: Semantic Model Generator
+    use_as_onboarding_question: false
+  - name: "avg_cagr_by_property_type"
+    sql: "SELECT PROPERTY_TYPE, AVG(CURRENT_CAGR) AS AVG_CURRENT_CAGR, AVG(FULL_LIFETIME_CAGR) AS AVG_FULL_CAGR, AVG(REMAINING_LEASE_CAGR) AS AVG_REMAINING_CAGR, COUNT(*) AS DEAL_COUNT FROM cagr_metrics GROUP BY PROPERTY_TYPE ORDER BY AVG_FULL_CAGR DESC"
+    question: What is the average CAGR performance by property type to identify optimal investment segments?
+    verified_at: 1782952251
+    verified_by: Semantic Model Generator
+    use_as_onboarding_question: false
+  - name: "spread_above_200bps"
+    sql: "SELECT PROPERTY_NAME, CURRENT_CAGR, FULL_LIFETIME_CAGR, SPREAD_VS_BENCHMARK, NOI_GROWTH_CAGR, TOTAL_RETURN_CAGR FROM cagr_metrics WHERE SPREAD_VS_BENCHMARK > 0.02 ORDER BY SPREAD_VS_BENCHMARK DESC"
+    question: Which properties have a spread above 200 basis points versus benchmark for optimal cap rate targeting?
+    verified_at: 1782952251
+    verified_by: Semantic Model Generator
+    use_as_onboarding_question: false
+  - name: "top_10_lifetime_cagr"
+    sql: "SELECT PROPERTY_NAME, ACQUISITION_PRICE, CURRENT_VALUE, FULL_LIFETIME_CAGR, REMAINING_LEASE_CAGR, YEARS_REMAINING, PROJECTED_END_VALUE FROM cagr_metrics ORDER BY FULL_LIFETIME_CAGR DESC LIMIT 10"
+    question: What are the top 10 highest performing sale-leaseback investments by full lifetime CAGR?
+    verified_at: 1782952251
+    verified_by: Semantic Model Generator
+    use_as_onboarding_question: false

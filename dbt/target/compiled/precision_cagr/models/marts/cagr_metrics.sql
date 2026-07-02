@@ -1,20 +1,20 @@
--- CAGR metrics mart combining properties, leases, and financials
+-- CAGR metrics mart combining properties, leases, and financials (SELECT-only; DDL managed by DCM)
 -- Co-authored with CoCo
 
 WITH props AS (
-    SELECT * FROM PRECISION.ODS.stg_properties
+    SELECT * FROM PRECISION.ODS.STG_PROPERTIES
 ),
 
 leases AS (
-    SELECT * FROM PRECISION.ODS.stg_leases
+    SELECT * FROM PRECISION.ODS.STG_LEASES
 ),
 
 fins AS (
-    SELECT * FROM PRECISION.ODS.stg_financials
+    SELECT * FROM PRECISION.ODS.STG_FINANCIALS
 ),
 
 econ AS (
-    SELECT cpi_cagr FROM PRECISION.ODS.stg_economics
+    SELECT cpi_cagr FROM PRECISION.ODS.STG_ECONOMICS
 )
 
 SELECT

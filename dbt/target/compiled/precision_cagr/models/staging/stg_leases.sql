@@ -1,4 +1,4 @@
--- Staging model for leases seed data
+-- Staging model for leases seed data (SELECT-only; DDL managed by DCM)
 -- Co-authored with CoCo
 
 SELECT
@@ -12,4 +12,4 @@ SELECT
     projected_end_value,
     DATEDIFF('day', lease_start_date::DATE, lease_end_date::DATE) / 365.25 AS total_lease_years,
     DATEDIFF('day', CURRENT_DATE(), lease_end_date::DATE) / 365.25 AS years_remaining
-FROM PRECISION.RAW.leases
+FROM PRECISION.RAW.LEASES
